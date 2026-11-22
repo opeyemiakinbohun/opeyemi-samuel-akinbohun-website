@@ -1,0 +1,138 @@
+[
+  {
+    "family": "Security engineering",
+    "titles": [
+      "Security Engineer",
+      "Cybersecurity Engineer",
+      "IoT Security Engineer",
+      "Cloud Security Engineer (entry level)"
+    ],
+    "evidence": "Built and attacked a five-system smart-home testbed; tested broker access control, replay and flooding behaviour. Cloud skills are developing through AZ-104 preparation.",
+    "links": [
+      {
+        "label": "Smart-home research",
+        "href": "/projects/smart-home-security-research"
+      },
+      {
+        "label": "Azure Cloud Lab",
+        "href": "/cloud-lab"
+      }
+    ]
+  },
+  {
+    "family": "Security research and applied cryptography",
+    "titles": [
+      "Security Researcher",
+      "Applied Cryptography Engineer",
+      "Research Engineer"
+    ],
+    "evidence": "PhD research on optimising Paillier partial homomorphic encryption; five manuscripts submitted or under review; taught homomorphic encryption at master's level.",
+    "links": [
+      {
+        "label": "Publications",
+        "href": "/publications"
+      },
+      {
+        "label": "Research",
+        "href": "/research"
+      }
+    ]
+  },
+  {
+    "family": "Academic: lecturing, postdoctoral and fellowship roles",
+    "titles": [
+      "Lecturer in Cybersecurity",
+      "Lecturer in Computer Science",
+      "Postdoctoral Research Associate",
+      "Research Fellow",
+      "Early-career research fellowships"
+    ],
+    "evidence": "PhD research on optimising Paillier partial homomorphic encryption with five manuscripts in peer review; homomorphic encryption taught to master's students; Graduate Teaching Assistant; reviewer for Scientific Reports (Springer Nature) and IET Blockchain; SPRITE+-supported place at the Strathclyde Cybercrime Summer School.",
+    "links": [
+      {
+        "label": "Publications",
+        "href": "/publications"
+      },
+      {
+        "label": "Academic activities",
+        "href": "/academic-activities"
+      }
+    ]
+  },
+  {
+    "family": "Digital forensics and incident response",
+    "titles": [
+      "Junior Digital Forensic Analyst",
+      "Digital Forensic Analyst",
+      "Security Investigation Analyst",
+      "Junior Incident Response Analyst",
+      "Security Analyst"
+    ],
+    "evidence": "MSc coursework with FTK Imager, Autopsy and EnCase; PhD network investigations with Wireshark, tcpdump, broker logs and Python correlation scripts.",
+    "links": [
+      {
+        "label": "Digital forensics",
+        "href": "/projects/digital-forensics"
+      }
+    ]
+  },
+  {
+    "family": "Data, analytics and machine learning",
+    "titles": [
+      "Data Analyst",
+      "Security Data Analyst",
+      "Research Data Analyst",
+      "Junior Data Scientist",
+      "Machine Learning Analyst",
+      "Junior Applied Machine Learning Engineer"
+    ],
+    "evidence": "MSc dissertation comparing eight classifiers for phishing URL detection; Python experiment pipelines and message-level datasets in the PhD; Huawei HCIA Big Data.",
+    "links": [
+      {
+        "label": "Phishing URL detection",
+        "href": "/projects/phishing-url-detection-machine-learning"
+      }
+    ]
+  },
+  {
+    "family": "Software engineering",
+    "titles": [
+      "Software Engineer",
+      "Python Developer",
+      "Research Software Engineer",
+      "Technology Graduate Programme"
+    ],
+    "evidence": "Python research tooling and audit scripts; ZeroSeal, Citizen and Omela built with Next.js and deployed on Vercel.",
+    "links": [
+      {
+        "label": "ZeroSeal",
+        "href": "/projects/zeroseal"
+      },
+      {
+        "label": "Citizen",
+        "href": "/projects/citizen"
+      },
+      {
+        "label": "Omela",
+        "href": "/projects/omela"
+      }
+    ]
+  },
+  {
+    "family": "Consulting, risk and security policy",
+    "titles": [
+      "Cybersecurity Consultant",
+      "Security Assurance Analyst",
+      "Technology Risk Analyst",
+      "Information Security Policy Analyst",
+      "Governance, Risk and Compliance Analyst"
+    ],
+    "evidence": "Threat analysis and risk assessment manuscript linking risk models to experimental evidence; ISC2 CC; experience explaining technical risk to students and non-specialists.",
+    "links": [
+      {
+        "label": "Risk assessment manuscript",
+        "href": "/publications/mqtt-threat-analysis-risk-assessment"
+      }
+    ]
+  }
+]

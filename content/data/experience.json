@@ -1,0 +1,81 @@
+[
+  {
+    "id": "gta",
+    "title": "Graduate Teaching Assistant",
+    "organisation": "University of Huddersfield",
+    "period": "October 2025 to present",
+    "location": "Huddersfield",
+    "group": "teaching",
+    "summary": "I support first-year students in practical laboratories for CFS2101 Computer Organisation and Architecture, helping them connect theory to working C programs, digital logic and binary arithmetic.",
+    "points": [
+      "Weekly two-hour, in-person lab sessions during the first semester.",
+      "Topics: introductory C programming, variables and data types, input and output with scanf and printf, number systems, binary arithmetic, Boolean algebra, logic gates, Karnaugh maps, adders and subtractors.",
+      "Most of the work is guided debugging: helping students read their own errors, reason about why a program fails and fix it themselves.",
+      "Supporting a mixed-ability group, explaining the same idea in more than one way when the first explanation does not land."
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "masters-he-teaching",
+    "title": "Guest teaching, master's-level Applied Cryptography",
+    "organisation": "University of Huddersfield",
+    "period": "November 2026",
+    "location": "Huddersfield",
+    "group": "teaching",
+    "summary": "I taught homomorphic encryption to master's students on the Applied Cryptography module, preparing the lecture slides and practical Python exercises built on the Paillier cryptosystem.",
+    "points": [
+      "Prepared lecture slides introducing homomorphic encryption and the Paillier cryptosystem.",
+      "Designed practical Python exercises in which students encrypt values with Paillier, combine ciphertexts and decrypt the result.",
+      "Taught alongside the module's academic staff."
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "pgr-rep",
+    "title": "Postgraduate Research Representative",
+    "organisation": "University of Huddersfield",
+    "period": "January 2026 to present",
+    "location": "Huddersfield",
+    "group": "research",
+    "summary": "I represent postgraduate researchers and pass their feedback to the relevant university staff and committees.",
+    "points": [],
+    "visibility": "public"
+  },
+  {
+    "id": "cornerstone",
+    "title": "IT Support Intern",
+    "organisation": "Cornerstone Investigations",
+    "period": "May to July 2024",
+    "location": "Remote",
+    "group": "professional",
+    "summary": "Technical support and documentation in a digital investigations setting.",
+    "points": [
+      "Used Microsoft Power Automate to streamline routine administrative workflows."
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "novateur",
+    "title": "First-Line IT Support Technician",
+    "organisation": "Novateur Technology",
+    "period": "April 2019 to March 2021",
+    "location": "Nigeria",
+    "group": "professional",
+    "summary": "User support and troubleshooting across hardware, software and networks for more than 100 users.",
+    "points": [
+      "Diagnosed and resolved issues with Windows workstations, routers, switches and firewalls."
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "rufus-giwa",
+    "title": "IT Support Intern (title to confirm)",
+    "organisation": "Rufus Giwa Polytechnic ICT Centre",
+    "period": "September 2018 to February 2019",
+    "location": "Nigeria",
+    "group": "earlier",
+    "summary": "Network equipment set-up, maintenance and end-user support.",
+    "points": [],
+    "visibility": "private"
+  }
+]

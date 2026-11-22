@@ -1,0 +1,45 @@
+{
+  "name": "opeyemi-samuel-akinbohun",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal professional website of Opeyemi Samuel Akinbohun",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run check:copy && next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check:copy": "node scripts/check-copy.mjs",
+    "check": "npm run check:copy && npm run typecheck && npm run lint",
+    "check:links": "node scripts/check-links.mjs",
+    "build:preview": "SHOW_DRAFTS=true STATIC_EXPORT=true next build"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/inter-tight": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource/atkinson-hyperlegible": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "github-slugger": "^2.0.0",
+    "gray-matter": "^4.0.3",
+    "next": "^16.4.6",
+    "next-mdx-remote": "^6.0.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1",
+    "simple-icons": "^16.38.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.6",
+    "typescript": "^5.9.3"
+  }
+}

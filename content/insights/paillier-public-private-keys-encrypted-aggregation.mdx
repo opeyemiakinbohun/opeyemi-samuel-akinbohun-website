@@ -1,0 +1,46 @@
+---
+slug: "paillier-public-private-keys-encrypted-aggregation"
+title: "Paillier Encryption in Practice: What the Public and Private Keys Actually Do"
+description: "Understanding how Paillier enables encrypted addition without giving the processing system permission to decrypt."
+category: "cryptography"
+contentType: "explainer"
+tags: ["paillier", "public-key-cryptography", "additive-homomorphism", "encryption"]
+publishedAt: "2026-11-22"
+updatedAt: null
+ownerApproved: true
+sources: [{"title": "Paillier, P. (1999). Public-Key Cryptosystems Based on Composite Degree Residuosity Classes.", "url": null}, {"title": "python-paillier project documentation.", "url": null}]
+relatedProjects: ["smart-home-security-research"]
+visibility: "public"
+verificationStatus: "to-confirm"
+lastVerifiedAt: null
+---
+
+One of the most interesting aspects of the Paillier cryptosystem is that a system can perform a useful operation on encrypted information without possessing the private key. At first, that can sound contradictory. If someone can change an encrypted value, what is the private key actually protecting?
+
+The distinction is between **performing an allowed mathematical operation** and **recovering the underlying plaintext**. Paillier is a public-key encryption scheme. A public key is used to encrypt values, while the private key enables authorised decryption. The public key can be distributed to components that need to encrypt data. The private key should remain with the trusted party authorised to read it.
+
+Paillier has an additive homomorphic property. At a high level, multiplying two valid ciphertexts under the same public key produces a ciphertext whose decryption corresponds to adding the original plaintext values, with arithmetic interpreted in the scheme's message space. This is not ordinary multiplication of the sensor readings. It is a ciphertext operation that represents addition after decryption.
+
+For example, imagine two sensors encrypt the integer readings 12 and 8 using the same Paillier public key. A broker or processing service that receives those ciphertexts can combine them homomorphically. When the authorised consumer decrypts the combined ciphertext, the result corresponds to 20, assuming the values are correctly encoded and within the supported range.
+
+The private key still matters because the intermediary cannot simply decrypt an individual sensor reading to discover whether it was 12 or 8. It can process encrypted values according to the scheme's mathematical rules without gaining the general ability to read their plaintexts.
+
+But there is a security caveat. A ciphertext can be modified in ways that affect what an authorised consumer eventually decrypts. This is often described in terms of **malleability**. In an application that accepts arbitrary encrypted messages without appropriate checks, an attacker might be able to cause an incorrect result even though they cannot recover the private key. Paillier's homomorphic property is not an authentication mechanism.
+
+A practical system therefore needs a wider security design. Depending on the threat model, that can include authenticated transport, message authentication or digital signatures, replay protection, strict input validation, source authorisation and independent consistency checks. The right controls depend on where messages originate, who is allowed to compute over them and what an attacker can access.
+
+There is also an engineering trade-off. Public-key operations can introduce computational overhead, especially in environments that produce frequent sensor updates. Encoding real-world measurements into integers, choosing key sizes and measuring latency are part of evaluating whether the approach is suitable for a particular workload.
+
+This is why I study Paillier as part of a larger experimental smart-home environment rather than treating it as an isolated formula. A cryptographic scheme can be mathematically correct while the overall application still has problems involving message integrity, throughput, access control or responsiveness.
+
+<Notes title="Research notes">
+
+**The integrity point in one line.** Paillier supports additive homomorphic computation, but it does not by itself authenticate MQTT messages. In practical systems, integrity, authorisation and replay protection require additional controls.
+
+**Two useful properties.** Multiplying two ciphertexts gives a ciphertext of the sum of the plaintexts. Raising a ciphertext to a known constant *k* gives a ciphertext of *k* times the plaintext. Both happen without the private key, which is exactly why malleability needs to be handled at the application level.
+
+**Randomness matters.** Paillier encryption is probabilistic: encrypting the same reading twice produces different ciphertexts. That stops an observer from spotting repeated values, but it also means a ciphertext on its own says nothing about where it came from.
+
+**In my experiments.** I use the python-paillier library with 2048 and 3072-bit keys in selected tests. Larger keys raise the cost of every encryption and decryption, which is why key size is measured rather than assumed.
+
+</Notes>

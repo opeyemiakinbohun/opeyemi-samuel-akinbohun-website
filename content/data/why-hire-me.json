@@ -1,0 +1,69 @@
+{
+  "title": "Why hire me",
+  "lede": "I combine research depth with hands-on engineering. Here is what I bring to a team, and where on this site you can check each point.",
+  "reasons": [
+    {
+      "title": "I build systems and prove they are secure",
+      "text": "For my PhD I designed a virtualised smart-home testbed, implemented Paillier encryption in Python and ran controlled replay, spoofing, flooding and malformed-message tests against it. I understand how systems fail, so I design them to hold up.",
+      "href": "/projects/smart-home-security-research",
+      "evidence": "PhD case study"
+    },
+    {
+      "title": "I check results before I claim them",
+      "text": "My experiments compare decrypted results against plaintext references, account for every message and report limitations next to findings. Your team gets conclusions it can defend to a client, an auditor or a board.",
+      "href": "/research",
+      "evidence": "Research overview"
+    },
+    {
+      "title": "I explain hard ideas clearly",
+      "text": "I have taught homomorphic encryption to master's students and support undergraduates as a Graduate Teaching Assistant. I can brief engineers, managers and non-specialists without losing accuracy.",
+      "href": "/academic-activities",
+      "evidence": "Teaching and academic activities"
+    },
+    {
+      "title": "I am trusted to judge technical work",
+      "text": "I review manuscripts for Scientific Reports (Springer Nature) and IET Blockchain. That means reading methods closely, testing whether evidence supports claims and giving feedback people can act on.",
+      "href": "/academic-activities/peer-review",
+      "evidence": "Peer review"
+    },
+    {
+      "title": "I ship working software",
+      "text": "Alongside my PhD I have built ZeroSeal, Citizen and Omela with Next.js, TypeScript and Vercel. I can take an idea from an empty repository to something people can use.",
+      "href": "/projects",
+      "evidence": "All projects"
+    },
+    {
+      "title": "I keep learning, and it shows",
+      "text": "MSc Cybersecurity and Digital Forensics with Distinction, BSc Computer Science with First Class Honours, ISC2 Certified in Cybersecurity and Huawei HCIA Big Data, and I am preparing for Microsoft AZ-104.",
+      "href": "/about#education",
+      "evidence": "Education and certifications"
+    }
+  ],
+  "qualitiesTitle": "How I work",
+  "qualities": [
+    {
+      "title": "Fast learner",
+      "text": "I taught myself Next.js, TypeScript and Stellar development to ship my own projects, and I am now working towards Microsoft AZ-104."
+    },
+    {
+      "title": "Curious by default",
+      "text": "My work spans cryptography, network security, digital forensics and machine learning because I follow a problem wherever it leads."
+    },
+    {
+      "title": "Steady under pressure",
+      "text": "I run doctoral research, five manuscripts in peer review, teaching and journal reviewing at the same time, and I meet my deadlines."
+    },
+    {
+      "title": "Invested in the team",
+      "text": "As a Graduate Teaching Assistant and postgraduate research representative, I put real time into helping the people around me improve."
+    },
+    {
+      "title": "Honest and dependable",
+      "text": "I say what the evidence shows and what it does not. Colleagues can rely on my work and on my word."
+    },
+    {
+      "title": "Driven to finish",
+      "text": "I take ownership of hard problems and see them through, from first design to tested, documented results."
+    }
+  ]
+}

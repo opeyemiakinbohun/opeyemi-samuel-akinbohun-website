@@ -1,0 +1,46 @@
+---
+slug: "reproducibility-cybersecurity-experiments"
+title: "Why Reproducibility Matters in Cybersecurity Research"
+description: "How repeatable experiments, source evidence and careful reporting make security claims more trustworthy."
+category: "advanced-research"
+contentType: "research-note"
+tags: ["reproducibility", "security-research", "datasets", "experimental-methods", "evidence"]
+publishedAt: "2026-11-22"
+updatedAt: null
+ownerApproved: true
+sources: [{"title": "ACM artifact review and badging guidance.", "url": null}, {"title": "NIST research reproducibility and data-integrity resources.", "url": null}]
+relatedProjects: ["smart-home-security-research"]
+visibility: "public"
+verificationStatus: "to-confirm"
+lastVerifiedAt: null
+---
+
+A security experiment can produce a compelling result and still leave an important question unanswered: would someone else reach the same conclusion using the same method? Reproducibility matters because technical findings are only as useful as the evidence and assumptions supporting them.
+
+Consider an experiment measuring message latency in an encrypted IoT system. Reporting a single average does not explain the full picture. What was the hardware or virtual-machine configuration? How many messages were sent? Were there competing workloads? What counted as a successful delivery? Were outliers excluded, and if so, why? Did the measurement include encryption, transport, decryption or all three?
+
+These details can change how a result should be interpreted. A number without its experimental context may look precise while telling readers very little about what the system would do under different conditions.
+
+One practical improvement is to define the experimental protocol before analysing results. Record the software versions, configuration, workload, test duration, attack conditions, timing method and success criteria. Use stable identifiers for runs so that figures, logs and reports can be traced back to the correct experiment.
+
+A second improvement is to collect evidence from more than one point in the system. In a networked application, the publisher, broker and consumer can each observe different parts of the same event. Correlating timestamps and message identifiers helps distinguish a packet that was transmitted from one that was received, processed and acted upon.
+
+A third improvement is to preserve data integrity. Cryptographic hashes such as SHA-256 can help detect whether an archived file has changed since a recorded checksum was created. That does not prove the experiment was correct, but it strengthens the chain of evidence by helping confirm that the analysed material matches the archived material.
+
+Independent checks are especially valuable. A second script or reference implementation can test assumptions that the original experiment code might overlook. For example, encrypted calculations can be compared with carefully defined plaintext references. The point is not to generate another 'pass' label; it is to make it harder for an unnoticed implementation error to become a research conclusion.
+
+Reproducibility also requires honest reporting of limitations. Virtual sensors are useful for controlled experimentation, but they are not equivalent to physical devices operating in an occupied home. A test performed under one network configuration cannot automatically establish performance across all networks. Results obtained under a specific attack model do not constitute proof of security against every possible attacker.
+
+My own research involves a virtualised smart-home testbed, encrypted message processing, network captures and validation scripts. Working with these systems has reinforced a simple principle: the strongest research story is not always the one with the largest number. It is the one where readers can understand what was measured, why the method was chosen, what the evidence supports and where the conclusions stop.
+
+<Notes title="Research notes">
+
+**What a hash does and does not prove.** A SHA-256 checksum shows that a file has not changed since the checksum was recorded. It does not prove where the file came from, or that the experiment that produced it was sound. The checksum record itself also needs to be kept somewhere trustworthy.
+
+**Terms vary.** Different research communities use "reproducible", "replicable" and "repeatable" in slightly different ways. When citing a standard, use its exact definitions.
+
+**A practical checklist I use.** Record software versions and configuration. Give every run a stable identifier. Collect evidence from more than one point. Hash archived files. Check results with code that is independent of the code under test. Write down the limits of the conclusion.
+
+**Status of my own audits.** I do not describe any specific experiment as independently validated on this site until its audit is complete.
+
+</Notes>

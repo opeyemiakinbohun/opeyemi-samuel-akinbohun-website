@@ -1,0 +1,81 @@
+---
+slug: "post-quantum-cryptography-what-changes"
+title: "Post-Quantum Cryptography: What Changes, and What It Means for Homomorphic Encryption"
+description: "Why large quantum computers threaten today's public-key cryptography, what NIST has standardised, the UK's migration timeline, and why Paillier is not quantum-safe."
+category: "cryptography"
+contentType: "explainer"
+tags: ["post-quantum", "cryptography", "homomorphic-encryption", "paillier", "nist", "ncsc"]
+publishedAt: "2026-11-22"
+updatedAt: null
+ownerApproved: true
+sources: [{"title": "NIST, Post-Quantum Cryptography Standardization (FIPS 203, 204 and 205; FIPS 206 and HQC status)", "url": "https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization"}, {"title": "NCSC, Timelines for migration to post-quantum cryptography", "url": "https://www.ncsc.gov.uk/guidance/pqc-migration-timelines"}, {"title": "NIST, Status Report on the Fourth Round of the NIST Post-Quantum Cryptography Standardization Process (NIST IR 8545)", "url": null}, {"title": "Shor, P. (1994). Algorithms for quantum computation: discrete logarithms and factoring.", "url": null}]
+relatedProjects: ["smart-home-security-research"]
+visibility: "public"
+verificationStatus: "to-confirm"
+lastVerifiedAt: "2026-11-21"
+---
+
+Most of the public-key cryptography that protects the internet today rests on two mathematical problems: factoring large numbers, and computing discrete logarithms. RSA depends on the first. Elliptic-curve cryptography and Diffie-Hellman key exchange depend on the second. For a classical computer, both problems are hard enough at practical key sizes that breaking them is out of reach.
+
+A sufficiently large quantum computer changes that. Shor's algorithm, published in 1994, solves both factoring and discrete logarithms efficiently on a quantum machine. No quantum computer today is large or reliable enough to break real RSA or elliptic-curve keys, but the risk is taken seriously because of how long data and systems last.
+
+## Why act before the machine exists
+
+The main concern is often called "harvest now, decrypt later". An attacker can record encrypted traffic today and store it until a capable quantum computer exists. Anything that must stay confidential for many years, such as health records, government data or long-lived intellectual property, is already exposed to that risk if it is protected only by quantum-vulnerable key exchange.
+
+Signatures have a different problem. A forged signature only matters once forging is possible, but replacing signature schemes inside firmware, certificates and hardware takes years. That is why migration has to start well before the threat is real.
+
+Symmetric cryptography is affected far less. Grover's algorithm gives a quadratic speed-up for brute-force search, which in practice means using larger keys. AES-256 and SHA-256-family hashes are generally considered adequate.
+
+## What has been standardised
+
+NIST published its first three post-quantum standards in August 2024:
+
+| Standard | Algorithm | Purpose | Based on |
+| --- | --- | --- | --- |
+| FIPS 203 | ML-KEM (from CRYSTALS-Kyber) | Key encapsulation | Module lattices |
+| FIPS 204 | ML-DSA (from CRYSTALS-Dilithium) | Digital signatures | Module lattices |
+| FIPS 205 | SLH-DSA (from SPHINCS+) | Digital signatures | Hash functions |
+
+FALCON was also selected and will become FIPS 206, which NIST lists as still in development. In March 2025 NIST selected HQC, a code-based key encapsulation mechanism, as a second option alongside ML-KEM, so that key establishment does not depend on lattices alone.
+
+## The UK timeline
+
+The National Cyber Security Centre has set out three milestones for organisations:
+
+- **By 2028:** define migration goals, carry out a full discovery exercise to find which services depend on cryptography that needs upgrading, and build an initial plan.
+- **By 2031:** complete the highest-priority migrations and refine the plan into a full roadmap.
+- **By 2035:** complete migration to post-quantum cryptography across systems, services and products.
+
+The first step is the least glamorous and the most important: knowing where cryptography is used. Many organisations do not have an inventory of which systems use RSA or elliptic curves, in which libraries, with which keys.
+
+## What this means for homomorphic encryption
+
+This is where post-quantum cryptography meets my own research. The Paillier cryptosystem, which I use for privacy-preserving aggregation of smart-home sensor data, is based on the decisional composite residuosity assumption. Its security is tied to the difficulty of factoring its modulus. A quantum computer running Shor's algorithm could factor that modulus and recover the private key.
+
+So Paillier is not post-quantum secure. For data that must stay confidential for decades, that matters. For short-lived sensor readings it may be an acceptable trade-off today, but the decision should be made deliberately rather than by default.
+
+The more general homomorphic schemes used in fully homomorphic encryption, such as BFV, BGV and CKKS, are built on lattice problems, specifically variants of Learning With Errors. These are the same family of problems behind ML-KEM and ML-DSA, and they are believed to resist quantum attacks. The trade-off is cost: lattice-based homomorphic encryption typically has larger ciphertexts and more computational overhead than Paillier, which is exactly the kind of cost that constrained smart-home devices struggle with.
+
+That tension, between strong long-term security and practical performance on small devices, is one of the reasons optimisation research in this area matters.
+
+## A practical starting point
+
+For an engineering team, the useful first actions are not exotic:
+
+1. Build an inventory of where public-key cryptography is used, including inside third-party libraries and devices.
+2. Identify data that must stay confidential for ten years or more, and prioritise the systems that protect it.
+3. Favour crypto-agile designs, where algorithms can be replaced through configuration rather than a rewrite.
+4. Track vendor support for ML-KEM and ML-DSA, including hybrid modes that combine classical and post-quantum algorithms during the transition.
+
+<Notes title="Research notes">
+
+**Scope.** This is an overview for engineers, not a cryptanalysis. Statements about standards and timelines reflect NIST and NCSC publications as checked in November 2026. Both are updated over time, so check the latest versions before relying on dates.
+
+**Paillier and quantum risk.** Paillier's security reduces to problems that are easy for a large quantum computer running Shor's algorithm. My PhD work uses Paillier because it is efficient for additive aggregation today. Long-term deployments would need a migration path to lattice-based schemes.
+
+**What "believed" means.** Lattice-based schemes have no known efficient quantum attack, but post-quantum security is an assumption based on current knowledge, not a proof. That is one reason NIST standardised a hash-based signature (SLH-DSA) and a code-based KEM (HQC) alongside the lattice schemes.
+
+**Hybrid deployments.** During migration, many systems combine a classical algorithm with a post-quantum one, so that a weakness in either does not break the connection on its own.
+
+</Notes>

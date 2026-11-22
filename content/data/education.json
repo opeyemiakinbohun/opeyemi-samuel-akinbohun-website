@@ -1,0 +1,49 @@
+[
+  {
+    "id": "phd",
+    "award": "PhD, Computing (Cybersecurity)",
+    "institution": "University of Huddersfield",
+    "period": "January 2025 to January 2028 (expected)",
+    "outcome": "In progress",
+    "details": [
+      "Vice-Chancellor's Scholarship.",
+      "Research focus: optimising partial homomorphic encryption (Paillier) for privacy-preserving smart-home IoT networks.",
+      "Methods: cryptographic implementation in Python, a five-system virtual testbed, MQTT network experiments under controlled attacks, packet capture analysis and reproducible evaluation."
+    ],
+    "link": {
+      "label": "PhD research programme",
+      "href": "/research"
+    },
+    "logo": "huddersfield"
+  },
+  {
+    "id": "msc",
+    "award": "MSc Cybersecurity and Digital Forensics",
+    "institution": "University of Huddersfield",
+    "period": "2023 to 2024",
+    "outcome": "Distinction",
+    "details": [
+      "Dissertation: Detection of Phishing URLs Using Machine Learning. A practical Python project comparing eight classification algorithms, with a web interface for classifying URLs.",
+      "Practical digital forensics coursework using FTK Imager, Autopsy and EnCase.",
+      "Training in data science and security analysis."
+    ],
+    "link": {
+      "label": "MSc dissertation project",
+      "href": "/projects/phishing-url-detection-machine-learning"
+    },
+    "logo": "huddersfield"
+  },
+  {
+    "id": "bsc",
+    "award": "BSc Computer Science",
+    "institution": "Joseph Ayo Babalola University, Nigeria",
+    "period": "Completed 2021",
+    "outcome": "First Class",
+    "details": [
+      "CGPA 4.75 out of 5.00.",
+      "Foundation in programming, computing systems and technical problem-solving."
+    ],
+    "link": null,
+    "logo": "jabu"
+  }
+]

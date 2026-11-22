@@ -1,0 +1,90 @@
+---
+slug: "bank-of-england-quantum-cyber-resilience-brief"
+title: "Quantum-Safe Finance: Reading the Bank of England's New Quantum Note as an Engineer"
+description: "On 19 November 2026 the Bank of England, the PRA and the FCA published effective practices for quantum-related cyber risk. What the note asks of UK financial firms, what it leaves open, and five recommendations."
+category: "policy"
+contentType: "policy-brief"
+tags: ["policy", "bank-of-england", "post-quantum", "financial-services", "cryptography", "ncsc"]
+publishedAt: "2026-11-22"
+updatedAt: null
+ownerApproved: true
+brief:
+  number: 1
+  question: "What does the regulators' new quantum note ask UK financial firms to do, and how should an engineering team turn it into work?"
+  audience: "PRA and FCA regulated firms and FMIs: CISOs, security architects and board risk committees"
+  recommendations:
+    - "Treat the note as a preview of future supervisory conversations, not optional reading."
+    - "Build a machine-readable cryptographic inventory, including suppliers, by 2028 to match the NCSC discovery milestone."
+    - "Rank migration work by how long data must stay secret. Anything sensitive beyond the mid-2030s moves first."
+    - "Write crypto-agility into every new contract and procurement decision."
+    - "Test hybrid deployments for silent downgrade and failed rollback, and report the results to the board."
+sources: [{"title": "PRA, FCA and Bank of England, Effective practices: Cyber risk and resilience management relating to quantum computing (19 November 2026)", "url": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/november/effective-practices-cyber-risk-and-resilience-management-relating-to-quantum-computing"}, {"title": "NCSC, Timelines for migration to post-quantum cryptography", "url": "https://www.ncsc.gov.uk/guidance/pqc-migration-timelines"}, {"title": "Bank of England, The Bank's approach to innovation in AI, DLT and quantum computing (2025)", "url": "https://www.bankofengland.co.uk/report/2025/the-boes-approach-to-innovation-in-ai-dlt-quantum-computing"}, {"title": "PYMNTS, BoE warns banks against AI cybersecurity risks (15 October 2026)", "url": "https://www.pymnts.com/cybersecurity/2026/boe-warns-banks-against-ai-cybersecurity-risks/"}, {"title": "NIST, Post-Quantum Cryptography Standardization (FIPS 203, 204 and 205)", "url": "https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization"}, {"title": "CMORG, Guidance for Post-Quantum Cryptography (April 2025)", "url": null}]
+relatedProjects: ["smart-home-security-research"]
+visibility: "public"
+verificationStatus: "documented"
+lastVerifiedAt: "2026-11-22"
+---
+
+Three days ago, the UK's financial regulators said something new about quantum computing. On 19 November 2026 the Prudential Regulation Authority, the Financial Conduct Authority and the Bank of England published a joint note on effective practices for managing cyber risk from quantum computing. It is short and calm, and it is easy to read as background. I think that would be a mistake.
+
+This brief reads the note the way a security engineer would. What is it actually asking for? What would that look like in a backlog? And where are the gaps a firm should plan around?
+
+## What the note is, and what it is not
+
+The note is careful about its own status. It describes itself as complementary to, but separate from, the regulators' supervisory statement and guidance on cyber risk and resilience, which is itself in draft under consultation paper CP17/26. It says plainly that the practices are not part of the regulators' formal expectations. It applies to firms, including financial market infrastructures, and it invites them to scale the practices to their size, complexity and risk profile.
+
+So nothing in it is a rule today. But regulators rarely write down "effective practices" for a risk they plan to ignore. The note also arrives a month after Deputy Governor Sarah Breeden said the Bank was surveying banks on their readiness for quantum risks to encryption, and would use the findings to shape a system-wide response. Read together, the direction is clear.
+
+## The risk, in the regulators' own framing
+
+The note defines a cryptographically relevant quantum computer as one able to undermine the public-key cryptography that protects most financial systems today. It accepts that no such machine is known to exist. It still makes a strong case for acting now, for three reasons:
+
+1. **Migration takes years.** Cryptography sits inside payment systems, certificates, hardware security modules, vendor appliances and decades-old core platforms.
+2. **"Harvest now, decrypt later" is already possible.** Encrypted data captured today can be stored and decrypted once a capable machine exists.
+3. **Forecasts can be wrong.** The note asks firms to plan against a range of timelines, not a single date.
+
+That framing matches the National Cyber Security Centre, whose migration timeline asks organisations to finish discovery and planning by 2028, complete the highest-priority migrations by 2031 and finish by 2035.
+
+## A translation table: from regulator language to engineering work
+
+The note is organised around governance, identification, protection and assurance. Here is how I would turn each area into concrete work.
+
+| The note asks for | What it looks like in practice |
+| --- | --- |
+| A documented migration plan with milestones, owned by the board | A named owner, a funded multi-year roadmap, and quarterly progress reported as management information |
+| A cryptographic inventory, including third parties | An automated scan of code, certificates, keys, protocols and vendor products, stored in a format tools can query |
+| Prioritisation by data sensitivity and protection lifetime | A ranking that asks how many years each data set must stay confidential, not just how sensitive it is today |
+| Crypto-agility | Algorithms set in configuration, not hard-coded, and contracts that oblige suppliers to support changes |
+| Hybrid schemes as an interim step, with a post-quantum-only end state | Classical and post-quantum key exchange combined during transition, with a planned date to retire the classical part |
+| Testing, including checks that systems do not revert to vulnerable methods | Tests that try to force a downgrade, failed-upgrade rollback drills, and monitoring for unexpected classical-only handshakes |
+| Accountability that stays with the firm when a supplier provides the service | Supplier questionnaires and contract clauses on post-quantum readiness, reviewed like any other critical dependency |
+
+Two lines in the note deserve more attention than they will probably get. First, the instruction to check that systems do not quietly revert to vulnerable methods. In my experience of security testing, downgrade paths are where good designs fail. A hybrid connection that falls back to classical-only cryptography when one side misbehaves looks fine on a dashboard and protects nothing against harvest-now attacks. Second, the reminder that a firm remains accountable for quantum risk even when a third party runs the service. For most firms, the hardest cryptography to change is the cryptography they do not own.
+
+## Measure before you migrate
+
+Post-quantum algorithms are not drop-in replacements. NIST's standardised key encapsulation mechanism, ML-KEM, uses a public key of 1,184 bytes at its middle security level, and ML-DSA signatures run to a few kilobytes, compared with 64 bytes for a typical elliptic-curve signature. That matters for payment messages, constrained terminals, certificate chains and latency budgets.
+
+My PhD work measures the real cost of cryptography on small devices, using Paillier encryption at 2048-bit and 3072-bit key sizes in a smart-home testbed. The lesson from that work carries over directly: performance assumptions about cryptography are often wrong until you measure them on the actual hardware and network. Firms should benchmark post-quantum options on their own systems early, before procurement decisions lock in.
+
+## Gaps worth planning around
+
+**The note sets no dates.** It points firms to the latest guidance rather than naming milestones. In practice, the NCSC's 2028, 2031 and 2035 targets are the clearest reference point a UK firm has, and I would plan against them.
+
+**Inventory is harder than it sounds.** Cryptography hides in libraries, firmware, HSM configurations and vendor black boxes. A one-off spreadsheet will be out of date within months. Firms will need repeatable discovery, and suppliers will need to disclose what cryptography their products use.
+
+**Proportionality can become a reason to wait.** Smaller firms may read "not formal expectations" as "not yet". But their exposure often sits with shared suppliers and market infrastructure, which is exactly where coordination matters most. The note encourages work with counterparties, infrastructure providers and industry forums. CMORG, the industry's operational resilience group, has already published guidance on post-quantum cryptography, and smaller firms can start there.
+
+**Cross-border timelines differ.** The note asks internationally active firms to account for different standards and timelines across jurisdictions. That is sensible, and it also means the slowest regime a firm operates in can set its real pace unless the board decides otherwise.
+
+## Three questions for the board
+
+If I sat on a risk committee, I would ask:
+
+1. Do we know where our quantum-vulnerable cryptography is, including in our suppliers' products, and how would we prove it?
+2. Which of our data must stay confidential into the 2030s, and is it already protected against harvest-now attacks?
+3. If a post-quantum upgrade failed in production tomorrow, could we roll back safely and stay within our impact tolerances?
+
+## What this brief does not claim
+
+This is my personal reading of a public document. It is not legal, regulatory or compliance advice, and I do not speak for the Bank of England, the PRA, the FCA or any firm. The note itself is not a set of formal expectations, and its relationship to the final supervisory statement may change after consultation. Key and signature sizes are from NIST's published standards; the costs for any specific system have to be measured on that system.

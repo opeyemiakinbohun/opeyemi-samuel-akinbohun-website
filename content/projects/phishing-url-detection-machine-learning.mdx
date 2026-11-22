@@ -1,0 +1,77 @@
+---
+slug: phishing-url-detection-machine-learning
+title: "Detection of Phishing URLs Using Machine Learning"
+order: 2
+kind: "MSc dissertation, machine learning and data analytics"
+summary: "I developed a machine learning workflow for classifying phishing URLs, compared eight classification algorithms, and turned it into a web prototype for SMEs, improved using feedback collected through a Google Form."
+status: "Completed 2024, MSc with Distinction"
+period: "2023 to 2024"
+skills: ["Data preprocessing", "Feature engineering", "Model comparison", "Model evaluation", "Python", "Web interface"]
+tools: ["Python", "pandas", "NumPy", "scikit-learn", "Jupyter Notebook", "Matplotlib", "XGBoost", "SVM", "Random Forest", "KNN", "ANN", "Logistic Regression", "Decision Tree", "Gaussian Naive Bayes"]
+liveUrl: null
+repositoryUrl: null
+relatedPublications: []
+logos: ["python", "scikitlearn", "pandas", "numpy", "jupyter"]
+featured: true
+results: [{"value": "Distinction", "label": "MSc Cybersecurity and Digital Forensics"}, {"value": "8", "label": "classifiers compared on a 70/30 split"}, {"value": "SME prototype", "label": "web tool built for small and medium-sized enterprises"}, {"value": "User feedback", "label": "collected through a Google Form and used to improve the platform"}]
+visibility: public
+verificationStatus: documented
+lastVerifiedAt: "2026-11-21"
+---
+
+## The problem
+
+Phishing remains a common way to trick people into visiting malicious websites. A suspicious URL can be difficult to assess simply by looking at it, especially when attackers use misleading domain names or convincing page addresses. For my MSc dissertation at the University of Huddersfield, I explored whether machine learning could help distinguish phishing URLs from legitimate ones using information extracted from URL data.
+
+This was a practical data analytics and machine learning project, not a literature review.
+
+<Pipeline
+  title="dissertation workflow"
+  steps={[
+    { title: "Prepare the data", text: "Load and check the URL dataset, then organise it for modelling." },
+    { title: "Engineer features", text: "Process URL-derived features for the models to learn from." },
+    { title: "Split 70/30", text: "Train on 70 per cent of the data and hold back 30 per cent for testing." },
+    { title: "Compare eight models", text: "Train eight supervised classifiers on the same features and split." },
+    { title: "Evaluate", text: "Confusion matrices, ROC curves, learning curves and comparative visualisations." },
+    { title: "Build an interface", text: "A web interface where a user submits a URL for classification." }
+  ]}
+  caption="Each stage was implemented in Python. Every model used the same features and the same split, so the comparison is fair."
+/>
+
+## My approach
+
+I developed a supervised learning workflow in Python. The work began with preparing the dataset, processing URL-derived features and organising the data for model training and evaluation. This was not just an exercise in calling a classifier. I needed to work with structured data, check the inputs, compare alternative modelling approaches and understand the errors different models made.
+
+I compared eight supervised classification methods, chosen to cover different modelling assumptions rather than treating one algorithm as the automatic answer:
+
+| Family | Algorithms |
+| --- | --- |
+| Ensemble | XGBoost, Random Forest |
+| Margin-based | Support Vector Machine (SVM) |
+| Instance-based | K-Nearest Neighbours (KNN) |
+| Neural | Artificial Neural Network (ANN) |
+| Linear | Logistic Regression |
+| Tree | Decision Tree |
+| Probabilistic | Gaussian Naive Bayes |
+
+## Data analysis and evaluation
+
+The project used a 70/30 training and test split. I evaluated the trained models using confusion matrices, ROC curves, learning curves and comparative visualisations. These methods helped me look beyond overall accuracy and consider how each model handled classification decisions and mistakes.
+
+A classifier that misses a phishing URL and one that incorrectly flags a legitimate URL create different practical problems. A miss lets an attack through; a false alarm teaches users to ignore warnings. Analysing those errors was an important part of comparing models and thinking about how a detection system should be used.
+
+## From analysis to an SME prototype
+
+I also built the detection workflow into a web-based prototype aimed at small and medium-sized enterprises (SMEs), which often lack dedicated security teams. Instead of leaving the work in notebooks and scripts, a user could submit a URL for classification and see the result. I collected feedback from users through a Google Form and used it to improve the platform. It was an academic prototype, not a production phishing protection service or a guarantee that a website is safe.
+
+## Skills demonstrated
+
+Data preparation, data mining and exploratory analysis, feature engineering, supervised learning, experimental evaluation, model visualisation and practical Python implementation with pandas, NumPy, scikit-learn-based workflows, Jupyter Notebook and Matplotlib. It also strengthened my ability to explain why model results must be read in context, especially when false positives and false negatives have real security consequences.
+
+## Limitations
+
+- Features derived from the URL alone cannot see the content of the page behind it, so some phishing pages with ordinary-looking addresses will be missed.
+- Phishing techniques change over time. A model trained on one period's data needs retraining and re-evaluation to stay useful.
+- Performance on one labelled dataset does not guarantee the same performance on live traffic.
+
+Dataset details, feature definitions and model scores will be added once they have been checked against the final dissertation.

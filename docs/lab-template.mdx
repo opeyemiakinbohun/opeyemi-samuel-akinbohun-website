@@ -1,0 +1,63 @@
+---
+# Copy this file to content/labs/<slug>.mdx and rename it to match the slug.
+slug: my-lab-slug
+title: "Short, specific lab title"
+order: 4
+# planned | in-progress | completed. Use completed only when the write-up and evidence are published.
+status: in-progress
+services: ["Virtual Network", "Network Security Groups"]
+objective: "One sentence on what the lab sets out to build or prove."
+architecture: "One or two sentences describing the resources and how they connect."
+# Optional diagram. Put the file in public/labs/<slug>/ first; the build fails if it is missing.
+architectureDiagram: null
+# architectureDiagram: { src: "/labs/my-lab-slug/architecture.png", alt: "Diagram of ...", caption: "Architecture" }
+examAreas: ["Implement and manage virtual networking"]
+skills: ["Network segmentation"]
+startedAt: "2026-12-01"
+completedAt: null
+github: null
+# github: "https://github.com/opeyemiakinbohun/<repository>"
+# Screenshots: store in public/labs/<slug>/ and remove tenant IDs, subscription IDs, IP addresses and resource IDs first.
+evidence: []
+# evidence:
+#   - { src: "/labs/my-lab-slug/nsg-rules.png", alt: "Network security group inbound rules showing port 22 restricted to one address", caption: "NSG inbound rules after hardening" }
+cost: null
+# cost: "Ran for about two hours on a free trial subscription. All resources were deleted with the resource group afterwards."
+visibility: public
+verificationStatus: owner-reported
+lastVerifiedAt: null
+---
+
+{/* Each heading below is tracked on the lab page. Keep the exact wording. Delete a heading if you have nothing true to write under it yet. */}
+
+## Objective and architecture
+
+What the lab was for, and how the resources fit together.
+
+## Azure services used
+
+The services and tools, and why each was chosen.
+
+## Configuration and implementation
+
+The main steps, in order. Include Azure CLI or PowerShell commands where you used them.
+
+## Validation evidence
+
+How you confirmed it worked: tests run, expected versus observed results. Refer to the screenshots listed in the front matter.
+
+## Problems and troubleshooting
+
+What went wrong and how you diagnosed and fixed it.
+
+## Security considerations
+
+Access control, network exposure, secrets handling and what you would harden in production.
+
+## Lessons learned
+
+What you would do differently and what the lab taught you.
+
+## Cleanup and cost
+
+How resources were removed and what the lab cost.

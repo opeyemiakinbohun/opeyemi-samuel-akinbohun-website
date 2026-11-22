@@ -1,0 +1,85 @@
+---
+slug: "quantum-safe-smart-homes-psti-policy-brief"
+title: "Quantum-Safe Homes: Why the UK's Smart Device Law Should Plan for Post-Quantum Updates"
+description: "A smart thermostat sold in 2027 may still be on a wall in 2037. A policy brief on the PSTI product security regime, post-quantum migration and the one update that has to ship in time."
+category: "policy"
+contentType: "policy-brief"
+tags: ["policy", "post-quantum", "iot-security", "psti", "cryptography", "ncsc"]
+publishedAt: "2026-11-22"
+updatedAt: null
+ownerApproved: true
+brief:
+  number: 2
+  question: "How should the UK's product security regime for smart devices prepare for the move to post-quantum cryptography?"
+  audience: "DSIT, the Office for Product Safety and Standards, device manufacturers and standards bodies"
+  recommendations:
+    - "Add a short cryptographic update readiness statement to the PSTI statement of compliance."
+    - "Expect devices sold after 2028 to accept a post-quantum or hash-based signature on firmware updates."
+    - "Show support periods against the NCSC's 2035 migration horizon, so buyers can compare devices honestly."
+    - "For home devices, put authenticity first: migrate update signatures before key exchange."
+    - "Fund testbed research on post-quantum costs for constrained hardware, so future rules rest on measured overhead."
+sources: [{"title": "GOV.UK, Regulations: consumer connectable product security (PSTI Act 2022 and 2023 Regulations)", "url": "https://www.gov.uk/guidance/regulations-consumer-connectable-product-security"}, {"title": "NCSC, Timelines for migration to post-quantum cryptography", "url": "https://www.ncsc.gov.uk/guidance/pqc-migration-timelines"}, {"title": "NIST SP 800-208, Recommendation for Stateful Hash-Based Signature Schemes", "url": "https://csrc.nist.gov/pubs/sp/800/208/final"}, {"title": "NIST, Post-Quantum Cryptography Standardization (FIPS 203, 204 and 205)", "url": "https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization"}, {"title": "Regulation (EU) 2024/2847, the Cyber Resilience Act", "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj"}, {"title": "ETSI EN 303 645, Cyber Security for Consumer Internet of Things: Baseline Requirements", "url": null}]
+relatedProjects: ["smart-home-security-research"]
+visibility: "public"
+verificationStatus: "documented"
+lastVerifiedAt: "2026-11-22"
+---
+
+Picture a smart thermostat bought in a UK shop in 2027. Its box promises security updates for five years. The heating works, so nobody replaces it, and in 2037 it is still on the wall, still connected and still trusting whatever firmware arrives with a valid signature.
+
+That thermostat sits at the meeting point of two UK policies that do not yet talk to each other. One is the product security regime for consumer smart devices. The other is the national plan to move to post-quantum cryptography. This brief argues they should be connected now, while doing so is still cheap.
+
+## Two policies, one timeline
+
+| Date | What happens |
+| --- | --- |
+| 29 April 2024 | The UK product security regime under the PSTI Act 2022 comes into force |
+| 11 September 2026 | Reporting obligations under the EU Cyber Resilience Act begin to apply |
+| 11 December 2027 | The Cyber Resilience Act's main obligations apply to products sold in the EU |
+| 2028 | NCSC target for discovery and an initial post-quantum migration plan |
+| 2031 | NCSC target for the highest-priority migrations |
+| 2035 | NCSC target for completing migration to post-quantum cryptography |
+
+A device sold during the next few years will spend much of its working life inside the NCSC's migration window. Today's product rules say very little about how it will get through that window.
+
+## What the UK rules require today
+
+The Product Security and Telecommunications Infrastructure Act 2022, with its 2023 regulations, sets three baseline requirements for consumer connectable products sold in the UK:
+
+1. No universal default or easily guessable passwords.
+2. A published way to report security issues.
+3. A published minimum period during which the product will receive security updates.
+
+These were the right first steps. They target the failures behind many real attacks on home devices, and they are simple enough to enforce. They draw on a wider European standard, ETSI EN 303 645, which contains further provisions that the UK regime does not yet make mandatory. None of the three requirements mentions cryptography directly.
+
+## The update that has to ship in time
+
+Most discussion of quantum risk focuses on confidentiality: "harvest now, decrypt later". For a bank or a government department, that is the main concern. For a smart home, I think the bigger risk is authenticity.
+
+Here is why. Much home telemetry, such as a temperature reading or a door opening, stays sensitive for a fairly short time. A forged firmware update is different. If an attacker can sign firmware that a device accepts, they control the device. Many devices check updates with an RSA or elliptic-curve signature, and a sufficiently capable quantum computer would be able to forge those.
+
+This creates a deadline that is easy to miss. A device can only move safely to a post-quantum way of checking updates through an update that is itself signed with the current scheme. That works only while the current scheme still holds. **Once classical signatures can be forged, the safe path to upgrade a device that cannot change its verification method has gone.** The migration window for home devices closes before a quantum computer arrives, not after.
+
+Good options already exist. NIST has standardised stateful hash-based signatures in SP 800-208, written with uses such as firmware signing in mind, and the stateless SLH-DSA in FIPS 205. Their security rests on hash functions rather than factoring or discrete logarithms. They are bigger and slower in some respects, which is exactly why the decision belongs in the hardware design stage and not in a rushed update in the 2030s.
+
+## Where my research fits
+
+My PhD studies Paillier homomorphic encryption for privacy-preserving smart-home data, measured on a real MQTT testbed at 2048-bit and 3072-bit key sizes. Paillier's security rests on factoring, so it is not quantum-safe, and I say so in my own work. Lattice-based homomorphic schemes are built on problems believed to resist quantum attack, but they carry heavier costs that are harder to absorb on small devices.
+
+The practical lesson from the testbed is that cryptographic choices on constrained hardware are always trade-offs between security, memory, energy and latency. Policy that ignores those costs will either be ignored by manufacturers or produce devices nobody can afford. Policy built on measurements can set requirements that are both safe and achievable.
+
+## Five recommendations
+
+**1. Add a cryptographic update readiness statement.** Manufacturers already provide a statement of compliance. One more short answer would help: can this device change the algorithm it uses to verify updates, in the field, without new hardware? Yes or no, with a sentence of explanation.
+
+**2. Expect post-quantum-capable update verification on devices sold after 2028.** This does not require every device to use post-quantum cryptography on day one. It requires the bootloader and update path to be able to accept a post-quantum or hash-based signature when the time comes. Lining this up with the NCSC's 2028 discovery milestone gives manufacturers a clear, early target.
+
+**3. Show support periods against the 2035 horizon.** A published support period is useful. Showing it against the NCSC's 2035 completion target makes it more useful: a buyer could see at a glance whether a device will still be supported when post-quantum migration should be finished.
+
+**4. Put authenticity first for home devices.** For consumer devices, migrate update signatures before key exchange. That ordering protects against the attack that gives full control of the device, and it avoids spending scarce resources on protecting data with a short sensitivity lifetime.
+
+**5. Fund measurement on constrained hardware.** Post-quantum costs on servers are well studied. Costs on cheap microcontrollers, battery devices and home hubs are less understood. Small public testbeds, of the kind I use in my research, could give regulators and manufacturers shared evidence before rules are written.
+
+## What this brief does not claim
+
+This is my personal analysis, not legal advice, and I do not speak for DSIT, the Office for Product Safety and Standards, the NCSC or any manufacturer. I am not claiming that a cryptographically relevant quantum computer will exist by any particular date, or that every home device needs post-quantum cryptography now. The argument is narrower: the ability to upgrade safely has to be built in before it is needed, and the product security regime is the natural place to ask for it. Dates for the EU Cyber Resilience Act refer to obligations in the EU and are included for comparison only.

@@ -1,0 +1,135 @@
+{
+  "start": "2018-07",
+  "end": "2028-03",
+  "initial": "2026-11",
+  "lanes": [
+    {
+      "name": "Education",
+      "items": [
+        {
+          "label": "BSc Computer Science, First Class, Joseph Ayo Babalola University",
+          "short": "BSc",
+          "from": "2018-07",
+          "to": "2021-09",
+          "dates": "completed 2021"
+        },
+        {
+          "label": "MSc Cybersecurity and Digital Forensics, Distinction, University of Huddersfield",
+          "short": "MSc",
+          "from": "2023-09",
+          "to": "2024-12",
+          "dates": "2023 to 2024"
+        },
+        {
+          "label": "PhD, University of Huddersfield, Vice-Chancellor's Scholarship",
+          "short": "PhD",
+          "from": "2025-01",
+          "to": "2028-01",
+          "dates": "January 2025 to January 2028, expected"
+        }
+      ]
+    },
+    {
+      "name": "Work",
+      "items": [
+        {
+          "label": "First-Line IT Support Technician, Novateur Technology",
+          "short": "Novateur",
+          "from": "2019-04",
+          "to": "2021-03",
+          "dates": "April 2019 to March 2021"
+        },
+        {
+          "label": "IT Support Intern, Cornerstone Investigations",
+          "short": "Cornerstone",
+          "from": "2024-05",
+          "to": "2024-07",
+          "dates": "May to July 2024"
+        }
+      ]
+    },
+    {
+      "name": "Teaching",
+      "items": [
+        {
+          "label": "Graduate Teaching Assistant, CFS2101 Computer Organisation and Architecture",
+          "short": "Graduate Teaching Assistant",
+          "from": "2025-10",
+          "to": "2026-11",
+          "dates": "October 2025 to present"
+        },
+        {
+          "label": "Taught homomorphic encryption to master's students",
+          "short": "MSc teaching",
+          "from": "2026-11",
+          "to": "2026-11",
+          "dates": "November 2026"
+        }
+      ]
+    },
+    {
+      "name": "Research",
+      "items": [
+        {
+          "label": "Smart-home testbed and Paillier experiments",
+          "short": "Testbed",
+          "from": "2025-01",
+          "to": "2026-11",
+          "dates": "during my PhD"
+        },
+        {
+          "label": "ACM SAC 2027 and ACM TRUST 2027 manuscripts submitted",
+          "short": "Submissions",
+          "from": "2026-10",
+          "to": "2026-11",
+          "dates": "October to November 2026"
+        }
+      ]
+    },
+    {
+      "name": "Service",
+      "items": [
+        {
+          "label": "University of Strathclyde Cybercrime Summer School, SPRITE+-supported",
+          "short": "Summer school",
+          "from": "2025-08",
+          "to": "2025-08",
+          "dates": "August 2025"
+        },
+        {
+          "label": "Postgraduate Research Representative",
+          "short": "PGR rep",
+          "from": "2026-01",
+          "to": "2026-11",
+          "dates": "January 2026 to present"
+        },
+        {
+          "label": "Reviewer, Scientific Reports (Springer Nature) and IET Blockchain",
+          "short": "Reviewer",
+          "from": "2026-01",
+          "to": "2026-11",
+          "dates": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Next",
+      "items": [
+        {
+          "label": "AZ-104 exam planned",
+          "short": "AZ-104",
+          "from": "2027-01",
+          "to": "2027-12",
+          "dates": "2027, planned"
+        },
+        {
+          "label": "Target start of an industry or academic role",
+          "short": "Start",
+          "from": "2028-01",
+          "to": "2028-02",
+          "dates": "From January 2028"
+        }
+      ]
+    }
+  ]
+}

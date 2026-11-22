@@ -1,0 +1,99 @@
+{
+  "barLabel": "Research at a glance",
+  "items": [
+    {
+      "label": "Manuscripts in peer review",
+      "value": "5",
+      "href": "/publications"
+    },
+    {
+      "label": "Simulated sensor streams in my testbed",
+      "value": "15",
+      "href": "/projects/smart-home-security-research"
+    },
+    {
+      "label": "Paillier key sizes tested",
+      "value": "2048 / 3072-bit",
+      "href": "/research"
+    },
+    {
+      "label": "ML classifiers compared (MSc)",
+      "value": "8",
+      "href": "/projects/phishing-url-detection-machine-learning"
+    },
+    {
+      "label": "Certifications earned",
+      "value": "2",
+      "href": "/about#credentials"
+    },
+    {
+      "label": "Journals I review for",
+      "value": "2",
+      "href": "/academic-activities/peer-review"
+    }
+  ],
+  "trust": [
+    {
+      "logo": "huddersfield",
+      "caption": "PhD and MSc",
+      "href": "/about#education"
+    },
+    {
+      "logo": "huddersfield",
+      "caption": "LTHE 1 certified, LTHE 2 in progress",
+      "href": "/about#credentials"
+    },
+    {
+      "logo": "scientificreports",
+      "caption": "Reviewer, Scientific Reports",
+      "href": "/academic-activities/peer-review"
+    },
+    {
+      "logo": "iet",
+      "caption": "Reviewer, IET Blockchain",
+      "href": "/academic-activities/peer-review"
+    },
+    {
+      "logo": "isc2",
+      "caption": "Certified in Cybersecurity",
+      "href": "/about#credentials"
+    },
+    {
+      "logo": "strathclyde",
+      "caption": "Cybercrime Summer School 2025",
+      "href": "/academic-activities/strathclyde-cybercrime-summer-school-2025"
+    },
+    {
+      "logo": "spriteplus",
+      "caption": "Supported place, 2025",
+      "href": "/academic-activities/strathclyde-cybercrime-summer-school-2025"
+    },
+    {
+      "logo": "huawei",
+      "caption": "HCIA Big Data",
+      "href": "/about#credentials"
+    },
+    {
+      "logo": "azure",
+      "caption": "AZ-104 in preparation",
+      "href": "/cloud-lab"
+    }
+  ],
+  "classifiers": [
+    "XGBoost",
+    "Random Forest",
+    "Support Vector Machine",
+    "K-Nearest Neighbours",
+    "Artificial Neural Network",
+    "Logistic Regression",
+    "Decision Tree",
+    "Gaussian Naive Bayes"
+  ],
+  "forensicsTools": [
+    "FTK Imager",
+    "Autopsy",
+    "EnCase",
+    "Wireshark",
+    "tcpdump"
+  ]
+}
