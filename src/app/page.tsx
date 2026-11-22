@@ -52,11 +52,11 @@ export default function Home() {
         <div className="wrap r-hero-grid">
           <div className="r-hero-copy">
             <h1 id="hero-title" className="r-display">
-              I build secure systems. <span className="r-dim">And prove they hold up.</span>
+              Cybersecurity researcher <span className="r-dim">and engineer.</span>
             </h1>
             <p className="r-sub">
-              Applied cryptography, network security, digital forensics and machine learning, with evidence for every claim. Open to industry and
-              academic roles anywhere in the UK.
+              Current PhD researcher in Cybersecurity at the University of Huddersfield, working across applied cryptography, network security, digital
+              forensics and machine learning. Open to industry and academic roles across the UK.
             </p>
             <div className="r-btns">
               <CvButton className="r-btn-lime" />
@@ -72,7 +72,7 @@ export default function Home() {
             <div className="r-hcard r-hcard-solo">
               <p className="r-hcard-label">Verified</p>
               <ul className="r-hverified">
-                <li><Logo id="huddersfield" size={22} decorative /><span>PhD, MSc and LTHE 1</span></li>
+                <li><Logo id="huddersfield" size={22} decorative /><span>MSc and LTHE 1, PhD in progress</span></li>
                 <li><Logo id="isc2" size={22} decorative /><span>ISC2 Certified in Cybersecurity</span></li>
                 <li><Logo id="scientificreports" size={22} decorative /><span>Reviewer, Scientific Reports</span></li>
               </ul>

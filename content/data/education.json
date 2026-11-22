@@ -36,7 +36,7 @@
   {
     "id": "bsc",
     "award": "BSc Computer Science",
-    "institution": "Joseph Ayo Babalola University, Nigeria",
+    "institution": null,
     "period": "Completed 2021",
     "outcome": "First Class",
     "details": [
@@ -44,6 +44,6 @@
       "Foundation in programming, computing systems and technical problem-solving."
     ],
     "link": null,
-    "logo": "jabu"
+    "logo": null
   }
 ]

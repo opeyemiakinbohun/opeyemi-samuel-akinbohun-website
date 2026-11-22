@@ -24,7 +24,6 @@ export function personJsonLd() {
     affiliation: { "@type": "CollegeOrUniversity", name: "University of Huddersfield" },
     alumniOf: [
       { "@type": "CollegeOrUniversity", name: "University of Huddersfield" },
-      { "@type": "CollegeOrUniversity", name: "Joseph Ayo Babalola University" },
     ],
     address: { "@type": "PostalAddress", addressLocality: "Huddersfield", addressCountry: "GB" },
     knowsAbout: ["Applied cryptography", "Homomorphic encryption", "IoT security", "MQTT", "Digital forensics", "Network analysis", "Machine learning", "Python"],

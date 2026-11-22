@@ -65,7 +65,7 @@ Two lines in the note deserve more attention than they will probably get. First,
 
 Post-quantum algorithms are not drop-in replacements. NIST's standardised key encapsulation mechanism, ML-KEM, uses a public key of 1,184 bytes at its middle security level, and ML-DSA signatures run to a few kilobytes, compared with 64 bytes for a typical elliptic-curve signature. That matters for payment messages, constrained terminals, certificate chains and latency budgets.
 
-My PhD work measures the real cost of cryptography on small devices, using Paillier encryption at 2048-bit and 3072-bit key sizes in a smart-home testbed. The lesson from that work carries over directly: performance assumptions about cryptography are often wrong until you measure them on the actual hardware and network. Firms should benchmark post-quantum options on their own systems early, before procurement decisions lock in.
+My PhD research measures the latency and throughput costs of Paillier encryption at 2048-bit and 3072-bit key sizes in a virtualised smart-home testbed. The general lesson applies here too: performance assumptions about cryptography should be checked by measuring them on the systems and networks where they will run. Firms should benchmark post-quantum options on their own systems early, before procurement decisions lock in.
 
 ## Gaps worth planning around
 

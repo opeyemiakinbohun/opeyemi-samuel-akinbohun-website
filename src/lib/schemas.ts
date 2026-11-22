@@ -131,12 +131,12 @@ export const educationSchema = z.array(
   z.object({
     id: z.string(),
     award: z.string(),
-    institution: z.string(),
+    institution: z.string().nullable(),
     period: z.string(),
     outcome: z.string(),
     details: z.array(z.string()),
     link: z.object({ label: z.string(), href: z.string() }).nullable(),
-    logo: z.string(),
+    logo: z.string().nullable(),
   }),
 );
 

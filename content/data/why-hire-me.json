@@ -3,8 +3,8 @@
   "lede": "I combine research depth with hands-on engineering. Here is what I bring to a team, and where on this site you can check each point.",
   "reasons": [
     {
-      "title": "I build systems and prove they are secure",
-      "text": "For my PhD I designed a virtualised smart-home testbed, implemented Paillier encryption in Python and ran controlled replay, spoofing, flooding and malformed-message tests against it. I understand how systems fail, so I design them to hold up.",
+      "title": "I build systems and test them carefully",
+      "text": "For my PhD I designed a virtualised smart-home testbed, implemented Paillier encryption in Python and ran controlled replay, spoofing, flooding and malformed-message tests against it. Seeing how systems fail shapes how I design them.",
       "href": "/projects/smart-home-security-research",
       "evidence": "PhD case study"
     },

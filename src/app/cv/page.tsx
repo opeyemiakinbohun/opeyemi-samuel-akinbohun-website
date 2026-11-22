@@ -35,8 +35,8 @@ export default function CvPage() {
       <section className="cv-section">
         <h2>Profile</h2>
         <p>
-          Cybersecurity PhD researcher focusing on optimising partial homomorphic encryption (Paillier) for privacy-preserving smart-home IoT networks.
-          Builds and attacks research systems, implements cryptography in Python, analyses network evidence and reports results reproducibly. MSc
+          Current cybersecurity PhD researcher (January 2025 to expected January 2028) focusing on optimising partial homomorphic encryption (Paillier) for privacy-preserving smart-home IoT networks.
+          Builds research systems and tests them under controlled attack scenarios, implements cryptography in Python, analyses network evidence and reports results reproducibly. MSc
           Cybersecurity and Digital Forensics with Distinction, including a machine learning dissertation on phishing URL detection. Graduate Teaching
           Assistant and academic peer reviewer.
         </p>
@@ -47,7 +47,7 @@ export default function CvPage() {
         {education.map((e) => (
           <div key={e.id} className="cv-item">
             <div className="cv-row"><strong>{e.award}, {e.outcome}</strong><span className="label">{e.period}</span></div>
-            <p>{e.institution}</p>
+            {e.institution && <p>{e.institution}</p>}
             <ul>{e.details.map((d) => <li key={d}>{d}</li>)}</ul>
           </div>
         ))}

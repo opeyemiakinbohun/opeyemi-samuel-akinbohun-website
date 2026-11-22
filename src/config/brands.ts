@@ -52,7 +52,6 @@ const text = (id: string, name: string, short?: string, guidelines?: string): Br
 export const brands: Record<string, Brand> = {
   // Education and academic
   huddersfield: { id: "huddersfield", name: "University of Huddersfield", kind: "file", src: "/logos/university-of-huddersfield.png", width: 320, height: 320 },
-  jabu: text("jabu", "Joseph Ayo Babalola University", "JABU"),
   strathclyde: { id: "strathclyde", name: "University of Strathclyde", kind: "file", src: "/logos/strathclyde.png", width: 496, height: 160, guidelines: "https://www.strath.ac.uk/" },
   spriteplus: { id: "spriteplus", name: "SPRITE+", kind: "file", src: "/logos/spriteplus.png", width: 970, height: 432, guidelines: "https://spritehub.org/" },
 

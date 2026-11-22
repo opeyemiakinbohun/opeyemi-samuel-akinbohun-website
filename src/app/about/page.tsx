@@ -46,7 +46,7 @@ export default function AboutPage() {
               improved using feedback collected through a Google Form.
             </p>
             <p>
-              My background also includes a First Class BSc in Computer Science from Joseph Ayo Babalola University, Nigeria, professional IT support experience, teaching first-year computing
+              My background also includes a First Class BSc in Computer Science, professional IT support experience, teaching first-year computing
               students and teaching homomorphic encryption at master&rsquo;s level. I am a reviewer for Scientific Reports (Springer Nature) and
               IET Blockchain.
             </p>
@@ -70,9 +70,9 @@ export default function AboutPage() {
           <div className="grid grid-3">
             {education.map((e) => (
               <article key={e.id} className="card">
-                <div className="card-top"><LogoMark id={e.logo} size={24} /><span className="label">{e.period}</span></div>
+                <div className="card-top">{e.logo && <LogoMark id={e.logo} size={24} />}<span className="label">{e.period}</span></div>
                 <h3>{e.award}</h3>
-                <p>{e.institution}</p>
+                {e.institution && <p>{e.institution}</p>}
                 <p><strong>{e.outcome}</strong></p>
                 <ul style={{ paddingLeft: "1.1em", margin: 0, color: "var(--ink-2)" }}>{e.details.map((d) => <li key={d} style={{ marginTop: 4 }}>{d}</li>)}</ul>
                 {e.link && <Link className="arrow-link meta" href={e.link.href}>{e.link.label}</Link>}
