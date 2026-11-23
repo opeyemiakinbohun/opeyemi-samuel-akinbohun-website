@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/config/site";
-import { categories, getActivities, getArticles, getCareerEntries, getProjects, getPublications } from "@/lib/content";
+import { categories, getActivities, getArticles, getCareerEntries, getProjects } from "@/lib/content";
 
-const STATIC = ["", "/projects", "/research", "/publications", "/academic-activities", "/insights", "/policy", "/cloud-lab", "/career", "/about", "/opportunities", "/contact", "/cv", "/accessibility", "/privacy"];
+const STATIC = ["", "/projects", "/academic-activities", "/insights", "/policy", "/cloud-lab", "/career", "/about", "/opportunities", "/contact", "/cv", "/accessibility", "/privacy"];
 
 export const dynamic = "force-static";
 
@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const urls = [
     ...STATIC,
     ...getProjects().map((p) => `/projects/${p.meta.slug}`),
-    ...getPublications().map((p) => `/publications/${p.meta.slug}`),
     ...getActivities().map((a) => `/academic-activities/${a.meta.slug}`),
     ...published(getArticles()).map((a) => `/insights/${a.meta.slug}`),
     ...published(getCareerEntries()).map((a) => `/career/${a.meta.slug}`),

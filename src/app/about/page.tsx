@@ -34,10 +34,9 @@ export default function AboutPage() {
         <div className="split" style={{ marginTop: 24 }}>
           <div className="prose" style={{ fontSize: "1.06rem" }}>
             <p>
-              I am Opeyemi Samuel Akinbohun, a cybersecurity PhD researcher at the University of Huddersfield. My research focuses on optimising
-              partial homomorphic encryption for privacy-preserving smart-home IoT networks, including Paillier encryption, MQTT communications and
-              controlled security experiments. The work is hands-on: I build and configure the systems, write the Python, run the experiments and
-              analyse the packet captures and logs myself.
+              I am Opeyemi Samuel Akinbohun, a current cybersecurity PhD researcher at the University of Huddersfield, working in the area of
+              privacy-preserving smart-home IoT security. Alongside my doctoral research I teach, review for academic journals, write policy briefs
+              and build software of my own.
             </p>
             <p>
               Before starting my PhD, I completed an MSc in Cybersecurity and Digital Forensics with Distinction. During that degree I worked with

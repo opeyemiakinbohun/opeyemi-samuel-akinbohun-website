@@ -1,6 +1,6 @@
 import { CvButton } from "@/components/CvButton";
 import { site } from "@/config/site";
-import { getCredentials, getEducation, getExperience, getPublications, getSkills } from "@/lib/content";
+import { getCredentials, getEducation, getExperience, getSkills } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
@@ -12,7 +12,6 @@ export const metadata = pageMeta({
 export default function CvPage() {
   const education = getEducation();
   const experience = getExperience();
-  const pubs = getPublications();
   const skills = getSkills();
   const credentials = getCredentials();
   return (
@@ -35,8 +34,8 @@ export default function CvPage() {
       <section className="cv-section">
         <h2>Profile</h2>
         <p>
-          Current cybersecurity PhD researcher (January 2025 to expected January 2028) focusing on optimising partial homomorphic encryption (Paillier) for privacy-preserving smart-home IoT networks.
-          Builds research systems and tests them under controlled attack scenarios, implements cryptography in Python, analyses network evidence and reports results reproducibly. MSc
+          Current cybersecurity PhD researcher at the University of Huddersfield (January 2025 to expected January 2028), in the area of privacy-preserving
+          smart-home IoT security. Works across applied cryptography, Python, network security and evidence analysis. MSc
           Cybersecurity and Digital Forensics with Distinction, including a machine learning dissertation on phishing URL detection. Graduate Teaching
           Assistant and academic peer reviewer.
         </p>
@@ -51,17 +50,6 @@ export default function CvPage() {
             <ul>{e.details.map((d) => <li key={d}>{d}</li>)}</ul>
           </div>
         ))}
-      </section>
-
-      <section className="cv-section">
-        <h2>Research manuscripts</h2>
-        <ol>
-          {pubs.map((p) => (
-            <li key={p.meta.slug} style={{ marginTop: 6 }}>
-              {p.meta.title}. <em>{p.meta.venue}</em>. {p.meta.statusLabel}.
-            </li>
-          ))}
-        </ol>
       </section>
 
       <section className="cv-section">
@@ -80,9 +68,8 @@ export default function CvPage() {
 
       <section className="cv-section">
         <h2>Selected projects</h2>
-        <div className="cv-item"><strong>Privacy-preserving smart-home security testbed.</strong> Five virtual machines, 15 simulated sensor streams, Home Assistant, MQTT and Mosquitto, Paillier encrypted aggregation in Python, controlled replay, spoofing and flooding attacks, packet capture analysis and independent audit scripts.</div>
         <div className="cv-item"><strong>Detection of Phishing URLs Using Machine Learning (MSc).</strong> Preprocessing, feature engineering, 70/30 split, comparison of eight classifiers with confusion matrices, ROC and learning curves, and a web interface for URL classification.</div>
-        <div className="cv-item"><strong>Digital forensics.</strong> MSc exercises with FTK Imager, Autopsy and EnCase; PhD network investigations with Wireshark, tcpdump, broker logs and Python correlation.</div>
+        <div className="cv-item"><strong>Digital forensics.</strong> MSc exercises with FTK Imager, Autopsy and EnCase.</div>
         <div className="cv-item"><strong>ZeroSeal, Citizen and Omela.</strong> Independent Next.js applications deployed on Vercel: a testnet blockchain security disclosure prototype, a Web3 life-simulation game, and a repeat-prescription coordination platform built with TypeScript, Prisma, Neon and NextAuth.</div>
       </section>
 

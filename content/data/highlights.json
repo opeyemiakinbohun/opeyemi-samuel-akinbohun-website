@@ -1,25 +1,20 @@
 {
-  "barLabel": "Research at a glance",
+  "barLabel": "At a glance",
   "items": [
     {
-      "label": "Manuscripts in peer review",
-      "value": "5",
-      "href": "/publications"
-    },
-    {
-      "label": "Simulated sensor streams in my testbed",
-      "value": "15",
-      "href": "/projects/smart-home-security-research"
-    },
-    {
-      "label": "Paillier key sizes tested",
-      "value": "2048 / 3072-bit",
-      "href": "/research"
+      "label": "Policy briefs published",
+      "value": "2",
+      "href": "/policy"
     },
     {
       "label": "ML classifiers compared (MSc)",
       "value": "8",
       "href": "/projects/phishing-url-detection-machine-learning"
+    },
+    {
+      "label": "Forensic suites used (MSc)",
+      "value": "3",
+      "href": "/projects/digital-forensics"
     },
     {
       "label": "Certifications earned",
@@ -92,8 +87,6 @@
   "forensicsTools": [
     "FTK Imager",
     "Autopsy",
-    "EnCase",
-    "Wireshark",
-    "tcpdump"
+    "EnCase"
   ]
 }

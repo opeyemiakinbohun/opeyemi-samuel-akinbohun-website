@@ -1,69 +1,73 @@
 {
   "title": "What I have built and tested.",
-  "dim": "Hands-on work behind the research, with evidence for each skill.",
-  "lede": "My PhD is experimental. Most of it is building systems, running them under controlled attack scenarios and checking the results, not writing alone.",
+  "dim": "Hands-on work across my degrees, teaching and independent projects.",
+  "lede": "The skills behind my work, with where I used each one and a link to the evidence.",
   "items": [
     {
       "skill": "Python development",
-      "context": "PhD experiments",
-      "what": "The Python implementation of my encrypted smart-home experiments, plus scripts that correlate packet captures with broker and application logs and check every decrypted result against a plaintext reference.",
-      "tools": ["Python", "python-paillier (phe)", "Git"],
-      "href": "/projects/smart-home-security-research"
+      "context": "MSc and independent projects",
+      "what": "Python for data preparation, feature engineering and model evaluation in my MSc dissertation, and for the cryptography exercises I designed for master's students.",
+      "tools": [
+        "Python",
+        "pandas",
+        "scikit-learn",
+        "Git"
+      ],
+      "href": "/projects/phishing-url-detection-machine-learning"
     },
     {
       "skill": "Applied cryptography",
-      "context": "PhD experiments",
-      "what": "Paillier partial homomorphic encryption implemented end to end with 2048-bit and 3072-bit keys, including encrypted aggregation and authorised decryption.",
-      "tools": ["python-paillier (phe)", "Python"],
-      "href": "/research"
-    },
-    {
-      "skill": "MQTT infrastructure",
-      "context": "PhD testbed",
-      "what": "Mosquitto brokers configured with credentials and topic access control lists, relaying 15 simulated sensor streams between virtual machines, with Home Assistant automation downstream.",
-      "tools": ["MQTT", "Mosquitto", "Home Assistant", "Linux", "VirtualBox"],
-      "href": "/projects/smart-home-security-research"
-    },
-    {
-      "skill": "Network security testing",
-      "context": "PhD experiments",
-      "what": "Controlled replay, spoofing, flooding and message-modification experiments from an isolated attacker machine, then message-age, duplicate and malformed-message checks tested against them.",
-      "tools": ["Linux", "MQTT", "Python"],
-      "href": "/projects/smart-home-security-research"
-    },
-    {
-      "skill": "Packet capture analysis",
-      "context": "PhD experiments",
-      "what": "Wireshark and tcpdump captures correlated with broker and application logs, with SHA-256 integrity hashes on archived evidence.",
-      "tools": ["Wireshark", "tcpdump", "Mosquitto logs"],
-      "href": "/projects/digital-forensics"
+      "context": "Teaching",
+      "what": "Taught homomorphic encryption and the Paillier cryptosystem on a master's Applied Cryptography module, with Python exercises on encrypting values, combining ciphertexts and decrypting results.",
+      "tools": [
+        "Python"
+      ],
+      "href": "/academic-activities/masters-homomorphic-encryption-teaching"
     },
     {
       "skill": "Machine learning",
       "context": "MSc dissertation",
       "what": "Phishing URL detection comparing eight classifiers on a 70/30 split, evaluated with confusion matrices and ROC curves, then built into a web prototype for SMEs.",
-      "tools": ["Python", "scikit-learn", "pandas", "NumPy", "Jupyter Notebook"],
+      "tools": [
+        "Python",
+        "scikit-learn",
+        "pandas",
+        "NumPy",
+        "Jupyter Notebook"
+      ],
       "href": "/projects/phishing-url-detection-machine-learning"
     },
     {
       "skill": "Digital forensics",
       "context": "MSc coursework",
       "what": "Disk image acquisition and examination in academic forensic exercises, with findings written up as reports.",
-      "tools": ["FTK Imager", "Autopsy", "EnCase"],
+      "tools": [
+        "FTK Imager",
+        "Autopsy",
+        "EnCase"
+      ],
       "href": "/projects/digital-forensics"
     },
     {
       "skill": "Cloud administration",
       "context": "Learning, AZ-104 preparation",
       "what": "Hands-on Microsoft Azure exercises in networking, identity and storage, being written up as documented labs. Not yet certified.",
-      "tools": ["Microsoft Azure"],
+      "tools": [
+        "Microsoft Azure"
+      ],
       "href": "/cloud-lab"
     },
     {
       "skill": "Full-stack software",
       "context": "Independent projects",
-      "what": "ZeroSeal, Citizen and Omela built and deployed alongside my PhD.",
-      "tools": ["Next.js", "TypeScript", "Prisma", "Neon (PostgreSQL)", "Vercel"],
+      "what": "ZeroSeal, Citizen and Omela, built and deployed independently.",
+      "tools": [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "Neon (PostgreSQL)",
+        "Vercel"
+      ],
       "href": "/projects"
     }
   ]

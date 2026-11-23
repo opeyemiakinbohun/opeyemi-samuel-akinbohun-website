@@ -7,8 +7,7 @@ export const site = {
   name: "Opeyemi Samuel Akinbohun",
   monogram: "OSA",
   role: "Cybersecurity PhD researcher, University of Huddersfield",
-  researchFocus:
-    "Optimising partial homomorphic encryption (Paillier) for privacy-preserving smart-home IoT networks",
+  researchFocus: "Privacy-preserving smart-home IoT security",
   descriptor: "Cybersecurity researcher | Applied cryptography | Security engineering",
   description:
     "Opeyemi Samuel Akinbohun is a cybersecurity PhD researcher at the University of Huddersfield working on applied cryptography, smart-home IoT security, network analysis, digital forensics and machine learning. Open to UK industry and academic roles, including lecturing, postdoctoral and fellowship posts, from January 2028.",
@@ -64,21 +63,12 @@ export const navigation: NavGroup[] = [
     href: "/projects",
     items: [
       { label: "All projects", href: "/projects", description: "Case studies with the evidence behind them" },
-      { label: "PhD smart-home research", href: "/projects/smart-home-security-research", description: "Paillier encryption tested under attack" },
       { label: "MSc machine learning", href: "/projects/phishing-url-detection-machine-learning", description: "Phishing URL detection, eight classifiers" },
-      { label: "Digital forensics", href: "/projects/digital-forensics", description: "FTK Imager, Autopsy, EnCase and network evidence" },
+      { label: "Digital forensics", href: "/projects/digital-forensics", description: "MSc practicals with FTK Imager, Autopsy and EnCase" },
       { label: "Azure Cloud Lab", href: "/cloud-lab", description: "AZ-104 preparation and hands-on labs" },
     ],
   },
-  {
-    label: "Research",
-    href: "/research",
-    items: [
-      { label: "Research overview", href: "/research", description: "PhD programme, methods and datasets" },
-      { label: "Academic activities", href: "/academic-activities", description: "Teaching, peer review, summer school" },
-    ],
-  },
-  { label: "Publications", href: "/publications" },
+  { label: "Academic", href: "/academic-activities" },
   {
     label: "Articles",
     href: "/insights",
@@ -93,8 +83,6 @@ export const navigation: NavGroup[] = [
 
 export const footerLinks: NavItem[] = [
   { label: "Projects", href: "/projects" },
-  { label: "Research", href: "/research" },
-  { label: "Publications", href: "/publications" },
   { label: "Academic activities", href: "/academic-activities" },
   { label: "Articles", href: "/insights" },
   { label: "Policy briefs", href: "/policy" },

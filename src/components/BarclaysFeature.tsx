@@ -22,7 +22,7 @@ export function BarclaysFeature() {
         <p className="lede" style={{ color: "var(--ink-2)" }}>
           In 2026 I reached the final assessment stage of two Barclays Technology Developer recruitment routes: the Discovery Programme and the main
           internship process. It changed how I prepare STAR examples, how I connect technical decisions to a bank&rsquo;s customers, and how I
-          present my PhD work as engineering evidence.
+          present my technical work as engineering evidence.
         </p>
         <p className="muted" style={{ fontSize: "0.92rem" }}>I was an applicant, not a Barclays employee. This is not an offer of employment or an endorsement.</p>
         <div className="btn-row">

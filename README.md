@@ -59,7 +59,6 @@ The lab appears automatically on `/cloud-lab` in the right group and gets its ow
 | Name, contact details, availability, CV path, navigation | `src/config/site.ts` |
 | Logos and their sources | `src/config/brands.ts`, `docs/brand-assets.md` |
 | Design system (colours, type, spacing) | `src/app/globals.css` |
-| Publications (5) | `content/publications/*.mdx` |
 | Project case studies | `content/projects/*.mdx` |
 | Articles | `content/insights/*.mdx` |
 | Career Journey articles (Barclays) | `content/career/*.mdx` |
@@ -78,10 +77,6 @@ Every content file is validated by the schemas in `src/lib/schemas.ts`. A missin
 4. When it is ready, set `visibility: "public"`, `ownerApproved: true` and `publishedAt: "YYYY-MM-DD"`. It then appears on the Articles page, the homepage, the sitemap and the RSS feed.
 
 Drafts never appear in production pages, the sitemap or RSS. A draft does not show a "Draft" label anywhere. It simply is not published.
-
-## Updating a publication status
-
-Edit the manuscript's file in `content/publications/`: change `status`, `statusLabel` and `statusAsOf`. When it is published, add `authors`, `doi` and `officialUrl`. Scholarly structured data is emitted only for published papers.
 
 ## Replacing the CV
 

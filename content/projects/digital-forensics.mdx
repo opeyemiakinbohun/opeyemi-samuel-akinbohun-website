@@ -1,29 +1,26 @@
 ---
 slug: digital-forensics
-title: "Digital Forensics and Network Investigation"
+title: "Digital Forensics Coursework"
 order: 3
-kind: "MSc coursework and PhD network investigations"
-summary: "Academic forensic exercises with FTK Imager, Autopsy and EnCase, and network investigations in my PhD using Wireshark, tcpdump, packet captures, broker logs and Python."
-status: "MSc completed 2024; PhD work ongoing"
-period: "2023 to present"
-skills: ["Evidence examination", "Network forensics", "Log correlation", "Evidence integrity", "Report writing"]
-tools: ["FTK Imager", "Autopsy", "EnCase", "Wireshark", "tcpdump", "Mosquitto logs", "Python", "SHA-256"]
+kind: "MSc coursework"
+summary: "Academic forensic exercises in my MSc using FTK Imager, Autopsy and EnCase: acquiring, examining and reporting on digital evidence."
+status: "MSc completed 2024"
+period: "2023 to 2024"
+skills: ["Evidence examination", "Evidence acquisition", "Evidence integrity", "Report writing"]
+tools: ["FTK Imager", "Autopsy", "EnCase"]
 liveUrl: null
 repositoryUrl: null
-relatedPublications: ["mqtt-attacks-message-level-ground-truth", "paillier-mqtt-active-attacks"]
-logos: ["wireshark", "python", "linux"]
+logos: []
 featured: true
-results: [{"value": "3", "label": "forensic suites used: FTK Imager, Autopsy and EnCase"}, {"value": "Reported", "label": "findings documented from each practical investigation"}, {"value": "SHA-256", "label": "integrity hashes on archived PhD network evidence"}]
+results: [{"value": "3", "label": "forensic suites used: FTK Imager, Autopsy and EnCase"}, {"value": "Reported", "label": "findings documented from each practical investigation"}, {"value": "Distinction", "label": "MSc Cybersecurity and Digital Forensics"}]
 visibility: public
 verificationStatus: documented
-lastVerifiedAt: "2026-11-21"
+lastVerifiedAt: "2026-11-22"
 ---
 
-My forensics experience comes from two different places, and it is worth being precise about each. The first is academic coursework during my MSc. The second is investigation work inside my PhD research. Neither is professional casework for a law enforcement body or a client.
+My forensics experience comes from academic coursework during my MSc. It was not professional casework for a law enforcement body or a client.
 
-<ForensicsTracks />
-
-## Track one: MSc forensic coursework
+## MSc forensic coursework
 
 During my MSc in Cybersecurity and Digital Forensics at the University of Huddersfield, completed with Distinction in 2024, I used three established forensic tools in practical investigation exercises set as part of the course:
 
@@ -31,22 +28,10 @@ During my MSc in Cybersecurity and Digital Forensics at the University of Hudder
 - **Autopsy**, an open-source platform for analysing disk images and the files, artefacts and activity within them.
 - **EnCase**, a commercial forensic suite used for acquisition and analysis.
 
-In these exercises I examined digital evidence, documented my observations as I worked and reported my findings. It taught me to separate what the evidence shows from what I might initially suspect, an approach that continues to shape how I investigate systems and experimental data.
+In these exercises I examined digital evidence, documented my observations as I worked and reported my findings. It taught me to separate what the evidence shows from what I might initially suspect.
 
 These were academic exercises on prepared material. They were not criminal investigations.
 
-## Track two: network investigation in my PhD
-
-My PhD involves investigating controlled cyberattacks on a smart-home testbed. That work uses the same habits on network evidence:
-
-- **Capture.** Packet captures taken with tcpdump at more than one point in the system, and examined in Wireshark.
-- **Logs.** Mosquitto broker logs showing connections, authentication and access-control decisions, alongside application logs from the consumer and Home Assistant.
-- **Correlation.** Python scripts that match timestamps and message identifiers across captures and logs, to establish what happened to each message.
-- **Integrity.** SHA-256 hashes recorded for archived evidence, so the analysed files can be confirmed to match the originals.
-- **Independent checks.** Separate audit scripts that re-examine the evidence without relying on the code that produced it.
-
-The question in each investigation is the one an incident responder asks: what actually happened? Did an attack message reach the broker, was it rejected, did the application act on it, and what effect did it have on legitimate traffic?
-
 ## Why it matters for forensic and incident response roles
 
-The coursework gave me the tools and the procedure. The PhD work gave me months of practice reconstructing events from imperfect evidence, and an understanding of where each source of evidence stops being reliable. A packet seen on one interface does not prove an application processed it, and a log entry is only as trustworthy as the system that wrote it.
+The coursework gave me the tools and the procedure: acquire carefully, record every step, keep evidence intact and report only what the evidence supports. Those habits carry over to incident response, where the first question is always the same: what actually happened?

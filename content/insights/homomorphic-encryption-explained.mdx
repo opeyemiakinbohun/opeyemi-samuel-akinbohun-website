@@ -9,7 +9,7 @@ publishedAt: "2026-11-22"
 updatedAt: null
 ownerApproved: true
 sources: [{"title": "Paillier, P. (1999). Public-Key Cryptosystems Based on Composite Degree Residuosity Classes.", "url": null}, {"title": "Gentry, C. (2009). A Fully Homomorphic Encryption Scheme.", "url": null}]
-relatedProjects: ["smart-home-security-research"]
+relatedProjects: []
 visibility: "public"
 verificationStatus: "to-confirm"
 lastVerifiedAt: null
@@ -23,13 +23,11 @@ Imagine two smart-home sensors reporting values of 20 and 25. Suppose a system n
 
 This example is deliberately simple. In practice, encryption schemes have rules about how numbers are represented, which operations are supported and who can decrypt. It is also important to distinguish different kinds of homomorphic encryption. **Partially homomorphic encryption** supports a limited operation, such as addition or multiplication. **Somewhat homomorphic encryption** permits a bounded range of operations, while **fully homomorphic encryption** aims to support arbitrary computations on encrypted data, subject to practical constraints and scheme design.
 
-The Paillier cryptosystem, which I use in my doctoral research, is an example of an additively homomorphic public-key scheme. Its properties make it useful for studying encrypted aggregation. But using Paillier does not make every kind of computation possible, and it does not eliminate performance overhead.
+The Paillier cryptosystem is an example of an additively homomorphic public-key scheme. Its properties make it useful for studying encrypted aggregation. But using Paillier does not make every kind of computation possible, and it does not eliminate performance overhead.
 
 Why does this matter for connected devices? Smart-home systems can produce streams of information about environmental conditions and activity. Even readings that appear harmless in isolation can reveal patterns when collected over time. Privacy-preserving processing is therefore worth exploring, particularly where information is sent through intermediary services.
 
 There are important limitations. Encrypted computation still consumes computing resources. Data must be encoded correctly, key management must be designed carefully, and the surrounding application needs suitable access controls. Most importantly, **confidentiality is not the same as integrity**. An additively homomorphic ciphertext may be mathematically manipulated without the private decryption key. That property enables useful computation but also means the system must not treat encryption alone as proof that data is authentic or unmodified.
-
-My research examines these trade-offs in a smart-home IoT setting. The central question is not simply whether encrypted computation works mathematically, but how it behaves inside a connected system with real message flows, timing constraints and attack conditions.
 
 <Notes title="Research notes">
 

@@ -6,16 +6,14 @@ import { Logo } from "./Logo";
 const columns = [
   { title: "Work", links: [
     { label: "Projects", href: "/projects" },
-    { label: "PhD research", href: "/projects/smart-home-security-research" },
     { label: "MSc machine learning", href: "/projects/phishing-url-detection-machine-learning" },
     { label: "Digital forensics", href: "/projects/digital-forensics" },
     { label: "Azure Cloud Lab", href: "/cloud-lab" },
   ] },
-  { title: "Research", links: [
-    { label: "Research overview", href: "/research" },
-    { label: "Publications", href: "/publications" },
+  { title: "Academic and writing", links: [
     { label: "Academic activities", href: "/academic-activities" },
     { label: "Articles", href: "/insights" },
+    { label: "Policy briefs", href: "/policy" },
   ] },
   { title: "Career", links: [
     { label: "Career Journey", href: "/career" },

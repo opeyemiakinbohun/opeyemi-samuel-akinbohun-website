@@ -4,15 +4,15 @@
   "reasons": [
     {
       "title": "I build systems and test them carefully",
-      "text": "For my PhD I designed a virtualised smart-home testbed, implemented Paillier encryption in Python and ran controlled replay, spoofing, flooding and malformed-message tests against it. Seeing how systems fail shapes how I design them.",
-      "href": "/projects/smart-home-security-research",
-      "evidence": "PhD case study"
+      "text": "From an eight-classifier machine learning comparison in my MSc to three deployed web applications, I build things, test how they behave and fix what fails. Seeing how systems fail shapes how I design them.",
+      "href": "/projects",
+      "evidence": "Projects"
     },
     {
       "title": "I check results before I claim them",
-      "text": "My experiments compare decrypted results against plaintext references, account for every message and report limitations next to findings. Your team gets conclusions it can defend to a client, an auditor or a board.",
-      "href": "/research",
-      "evidence": "Research overview"
+      "text": "I report limitations next to findings and separate what evidence shows from what I might expect. My policy briefs cite every regulatory claim to its primary source. Your team gets conclusions it can defend to a client, an auditor or a board.",
+      "href": "/policy",
+      "evidence": "Policy briefs"
     },
     {
       "title": "I explain hard ideas clearly",
@@ -28,7 +28,7 @@
     },
     {
       "title": "I ship working software",
-      "text": "Alongside my PhD I have built ZeroSeal, Citizen and Omela with Next.js, TypeScript and Vercel. I can take an idea from an empty repository to something people can use.",
+      "text": "I have built ZeroSeal, Citizen and Omela with Next.js, TypeScript and Vercel. I can take an idea from an empty repository to something people can use.",
       "href": "/projects",
       "evidence": "All projects"
     },
@@ -51,7 +51,7 @@
     },
     {
       "title": "Steady under pressure",
-      "text": "I run doctoral research, five manuscripts in peer review, teaching and journal reviewing at the same time, and I meet my deadlines."
+      "text": "I balance doctoral research, teaching and journal reviewing at the same time, and I meet my deadlines."
     },
     {
       "title": "Invested in the team",

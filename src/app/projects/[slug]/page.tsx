@@ -1,13 +1,11 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Mdx } from "@/components/Mdx";
 import { PageHead } from "@/components/PageHead";
 import { Results } from "@/components/Results";
-import { StatusTag } from "@/components/StatusTag";
 import { Logo } from "@/components/Logo";
 import { brand } from "@/config/brands";
 import { ExternalIcon } from "@/components/Icons";
-import { getProject, getProjects, getPublication } from "@/lib/content";
+import { getProject, getProjects } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
 import { getToc } from "@/lib/toc";
 
@@ -30,7 +28,6 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound();
   const m = project.meta;
   const toc = getToc(project.body);
-  const pubs = m.relatedPublications.map((s) => getPublication(s)).filter((p) => p !== undefined);
 
   return (
     <>
@@ -77,24 +74,6 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
-      {pubs.length > 0 && (
-        <section className="section">
-          <div className="wrap">
-            <h2 style={{ marginBottom: 20 }}>Related manuscripts</h2>
-            <ul className="row-list">
-              {pubs.map((p) => (
-                <li key={p.meta.slug}>
-                  <Link className="pub-row" href={`/publications/${p.meta.slug}`}>
-                    <span className="pub-title">{p.meta.title}</span>
-                    <span>{p.meta.venue}</span>
-                    <StatusTag status={p.meta.status} label={p.meta.statusLabel} />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
     </>
   );
 }

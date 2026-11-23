@@ -19,7 +19,7 @@ brief:
     - "Write crypto-agility into every new contract and procurement decision."
     - "Test hybrid deployments for silent downgrade and failed rollback, and report the results to the board."
 sources: [{"title": "PRA, FCA and Bank of England, Effective practices: Cyber risk and resilience management relating to quantum computing (19 November 2026)", "url": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/november/effective-practices-cyber-risk-and-resilience-management-relating-to-quantum-computing"}, {"title": "NCSC, Timelines for migration to post-quantum cryptography", "url": "https://www.ncsc.gov.uk/guidance/pqc-migration-timelines"}, {"title": "Bank of England, The Bank's approach to innovation in AI, DLT and quantum computing (2025)", "url": "https://www.bankofengland.co.uk/report/2025/the-boes-approach-to-innovation-in-ai-dlt-quantum-computing"}, {"title": "PYMNTS, BoE warns banks against AI cybersecurity risks (15 October 2026)", "url": "https://www.pymnts.com/cybersecurity/2026/boe-warns-banks-against-ai-cybersecurity-risks/"}, {"title": "NIST, Post-Quantum Cryptography Standardization (FIPS 203, 204 and 205)", "url": "https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization"}, {"title": "CMORG, Guidance for Post-Quantum Cryptography (April 2025)", "url": null}]
-relatedProjects: ["smart-home-security-research"]
+relatedProjects: []
 visibility: "public"
 verificationStatus: "documented"
 lastVerifiedAt: "2026-11-22"
@@ -65,7 +65,7 @@ Two lines in the note deserve more attention than they will probably get. First,
 
 Post-quantum algorithms are not drop-in replacements. NIST's standardised key encapsulation mechanism, ML-KEM, uses a public key of 1,184 bytes at its middle security level, and ML-DSA signatures run to a few kilobytes, compared with 64 bytes for a typical elliptic-curve signature. That matters for payment messages, constrained terminals, certificate chains and latency budgets.
 
-My PhD research measures the latency and throughput costs of Paillier encryption at 2048-bit and 3072-bit key sizes in a virtualised smart-home testbed. The general lesson applies here too: performance assumptions about cryptography should be checked by measuring them on the systems and networks where they will run. Firms should benchmark post-quantum options on their own systems early, before procurement decisions lock in.
+Performance assumptions about cryptography should be checked by measuring them on the systems and networks where they will run. Firms should benchmark post-quantum options on their own systems early, before procurement decisions lock in.
 
 ## Gaps worth planning around
 

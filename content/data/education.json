@@ -7,13 +7,9 @@
     "outcome": "In progress",
     "details": [
       "Vice-Chancellor's Scholarship.",
-      "Research focus: optimising partial homomorphic encryption (Paillier) for privacy-preserving smart-home IoT networks.",
-      "Methods: cryptographic implementation in Python, a five-system virtual testbed, MQTT network experiments under controlled attacks, packet capture analysis and reproducible evaluation."
+      "Research area: privacy-preserving smart-home IoT security."
     ],
-    "link": {
-      "label": "PhD research programme",
-      "href": "/research"
-    },
+    "link": null,
     "logo": "huddersfield"
   },
   {

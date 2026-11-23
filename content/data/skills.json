@@ -1,32 +1,101 @@
 [
   {
     "area": "Security engineering and network analysis",
-    "summary": "Building systems, attacking them under controlled conditions and reading the evidence.",
-    "items": ["MQTT and Mosquitto", "Home Assistant", "Linux", "VirtualBox", "Wireshark", "tcpdump", "Access control testing", "Replay, spoofing and flooding scenarios"],
-    "evidence": [{ "label": "Smart-home research", "href": "/projects/smart-home-security-research" }]
+    "summary": "Securing systems and reading network evidence.",
+    "items": [
+      "Linux",
+      "Wireshark",
+      "tcpdump",
+      "Network protocols",
+      "Access control"
+    ],
+    "evidence": [
+      {
+        "label": "About",
+        "href": "/about"
+      }
+    ]
   },
   {
     "area": "Applied cryptography",
-    "summary": "Implementing and measuring partial homomorphic encryption in a working system.",
-    "items": ["Paillier cryptosystem", "python-paillier (phe)", "Encrypted aggregation", "2048 and 3072-bit keys", "Integer encoding", "SHA-256 integrity checks"],
-    "evidence": [{ "label": "Research programme", "href": "/research" }]
+    "summary": "Teaching and writing about modern cryptography.",
+    "items": [
+      "Public-key cryptography",
+      "Homomorphic encryption",
+      "Paillier cryptosystem",
+      "Post-quantum migration",
+      "SHA-256 integrity checks"
+    ],
+    "evidence": [
+      {
+        "label": "Teaching",
+        "href": "/academic-activities/masters-homomorphic-encryption-teaching"
+      },
+      {
+        "label": "Policy briefs",
+        "href": "/policy"
+      }
+    ]
   },
   {
     "area": "Digital forensics",
-    "summary": "Academic forensic exercises and network investigation in research.",
-    "items": ["FTK Imager", "Autopsy", "EnCase", "PCAP analysis", "Log correlation", "Evidence documentation"],
-    "evidence": [{ "label": "Digital forensics", "href": "/projects/digital-forensics" }]
+    "summary": "Academic forensic exercises in my MSc.",
+    "items": [
+      "FTK Imager",
+      "Autopsy",
+      "EnCase",
+      "Evidence documentation",
+      "Evidence integrity"
+    ],
+    "evidence": [
+      {
+        "label": "Digital forensics",
+        "href": "/projects/digital-forensics"
+      }
+    ]
   },
   {
     "area": "Data analytics and machine learning",
     "summary": "Preparing data, comparing models and reporting results honestly.",
-    "items": ["Python", "Data preprocessing", "Feature engineering", "XGBoost", "Random Forest", "SVM", "Confusion matrices", "ROC curves", "Learning curves"],
-    "evidence": [{ "label": "MSc dissertation", "href": "/projects/phishing-url-detection-machine-learning" }]
+    "items": [
+      "Python",
+      "Data preprocessing",
+      "Feature engineering",
+      "XGBoost",
+      "Random Forest",
+      "SVM",
+      "Confusion matrices",
+      "ROC curves",
+      "Learning curves"
+    ],
+    "evidence": [
+      {
+        "label": "MSc dissertation",
+        "href": "/projects/phishing-url-detection-machine-learning"
+      }
+    ]
   },
   {
     "area": "Software and cloud",
     "summary": "Shipping small applications and learning cloud administration properly.",
-    "items": ["Python", "TypeScript", "Next.js", "React", "Git", "Vercel", "Microsoft Azure (learning)"],
-    "evidence": [{ "label": "Projects", "href": "/projects" }, { "label": "Azure Cloud Lab", "href": "/cloud-lab" }]
+    "items": [
+      "Python",
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Git",
+      "Vercel",
+      "Microsoft Azure (learning)"
+    ],
+    "evidence": [
+      {
+        "label": "Projects",
+        "href": "/projects"
+      },
+      {
+        "label": "Azure Cloud Lab",
+        "href": "/cloud-lab"
+      }
+    ]
   }
 ]

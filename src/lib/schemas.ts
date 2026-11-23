@@ -15,25 +15,6 @@ const base = {
   lastVerifiedAt: z.string().nullable(),
 };
 
-export const publicationSchema = z.object({
-  ...base,
-  order: z.number(),
-  venue: z.string(),
-  venueShort: z.string(),
-  publisher: z.string().nullable(),
-  type: z.enum(["journal", "conference"]),
-  status: z.enum(["submitted", "under-review", "revised-under-review", "accepted", "published"]),
-  statusLabel: z.string(),
-  statusAsOf: z.string(),
-  summary: z.string(),
-  topics: z.array(z.string()),
-  authors: z.array(z.string()),
-  doi: z.string().nullable(),
-  officialUrl: webUrl().nullable(),
-  relatedProjects: z.array(z.string()),
-  relatedDatasets: z.array(z.string()),
-  publisherLogo: z.string(),
-});
 
 export const projectSchema = z.object({
   ...base,
@@ -46,7 +27,6 @@ export const projectSchema = z.object({
   tools: z.array(z.string()),
   liveUrl: webUrl().nullable(),
   repositoryUrl: webUrl().nullable(),
-  relatedPublications: z.array(z.string()),
   featured: z.boolean(),
   logos: z.array(z.string()).default([]),
   results: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
@@ -119,7 +99,6 @@ export const labSchema = z.object({
 
 export const careerSchema = articleSchema;
 
-export type Publication = z.infer<typeof publicationSchema>;
 export type Project = z.infer<typeof projectSchema>;
 export type Article = z.infer<typeof articleSchema>;
 export type Activity = z.infer<typeof activitySchema>;
@@ -195,15 +174,3 @@ export const timelineSchema = z.object({
   ),
 });
 
-export const datasetsSchema = z.array(
-  z.object({
-    slug: z.string(),
-    title: z.string(),
-    description: z.string(),
-    access: z.enum(["public", "restricted", "private"]),
-    accessLabel: z.string(),
-    availability: z.string(),
-    relatedPublications: z.array(z.string()),
-    publicUrl: webUrl().nullable(),
-  }),
-);

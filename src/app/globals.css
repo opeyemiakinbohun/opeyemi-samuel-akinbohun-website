@@ -302,9 +302,6 @@ a.logo-badge:hover { border-color: var(--line-strong); }
 .flow-step p { color: var(--night-muted); font-size: 0.82rem; margin-top: 4px; line-height: 1.5; }
 .flow-step::before { counter-increment: step; content: counter(step, decimal-leading-zero); font: 0.7rem var(--font-mono); color: var(--signal); display: block; margin-bottom: 4px; }
 
-/* Testbed architecture */
-.testbed { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(92px, auto)); grid-template-areas: ". . ha" "sensors broker consumer" "attacker . ."; gap: 28px 40px; padding: 28px; }
-.testbed-lines { position: absolute; inset: 28px; width: calc(100% - 56px); height: calc(100% - 56px); }
 .tb-node { position: relative; z-index: 1; align-self: center; background: var(--night-2); border: 1px solid var(--night-line); border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
 .tb-node strong { font-family: var(--font-display); font-weight: 600; font-size: 0.98rem; letter-spacing: -0.01em; color: var(--night-ink); display: flex; align-items: center; gap: 8px; }
 .tb-node strong svg { width: 16px; height: 16px; }
@@ -314,7 +311,6 @@ a.logo-badge:hover { border-color: var(--line-strong); }
 .tb-broker { grid-area: broker; }
 .tb-consumer { grid-area: consumer; border-color: rgba(142,162,255,.55); }
 .tb-attacker { grid-area: attacker; border-color: rgba(255,122,107,.5); }
-@media (max-width: 720px) { .testbed { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-template-areas: "sensors" "broker" "consumer" "ha" "attacker"; gap: 12px; padding: 16px; } .testbed-lines { display: none; } }
 
 /* Simulation */
 .sim-scenario { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: var(--night-ink); font-size: 0.92rem; }

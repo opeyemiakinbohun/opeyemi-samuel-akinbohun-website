@@ -6,7 +6,7 @@ export const metadata = pageMeta({ title: "Accessibility", description: "How thi
 
 const features = [
   "Reading controls in the header: stop motion, larger text, higher contrast, dark theme, a more legible font with wider spacing, and underlined links. Choices are saved on your device.",
-  "Your operating system's reduced-motion setting is respected automatically. The only animation on the site is the testbed simulation, which runs only when you press Run.",
+  "Your operating system's reduced-motion setting is respected automatically. The site uses only light motion, such as hover effects.",
   "Every page works with a keyboard alone, with a visible focus outline and a skip link to the main content.",
   "Statuses use text and a shape, never colour alone.",
   "Diagrams have text explanations alongside them, and the interactive timeline announces what is active as you move it.",

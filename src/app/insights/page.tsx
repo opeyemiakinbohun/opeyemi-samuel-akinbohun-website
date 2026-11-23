@@ -19,7 +19,7 @@ export default function InsightsPage() {
         crumbs={[{ label: "Articles" }]}
         eyebrow="Articles"
         title="Read my technical writing"
-        lede="Explainers and research notes written from my own work on encryption, MQTT security and experimental method. Each article ends with notes on scope, limitations and further reading."
+        lede="Explainers and policy briefs on encryption, post-quantum cryptography and cyber security policy. Each article ends with notes on scope, limitations and further reading."
       />
       <section className="section">
         <div className="wrap">

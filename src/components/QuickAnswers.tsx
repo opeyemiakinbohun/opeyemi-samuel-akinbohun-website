@@ -22,7 +22,7 @@ export function QuickAnswers({ answers }: { answers: Answer[] }) {
       <div className="qa-search">
         <SearchIcon />
         <label htmlFor={id} className="sr-only">Search questions from recruiters, hiring managers and employers</label>
-        <input id={id} type="search" value={q} placeholder="Try: start date, relocate, Python, forensics, publications" autoComplete="off"
+        <input id={id} type="search" value={q} placeholder="Try: start date, relocate, Python, forensics, teaching" autoComplete="off"
           onChange={(e) => { setQ(e.target.value); setPick(0); }} />
       </div>
       <ul className="qa-list" aria-label="Questions">

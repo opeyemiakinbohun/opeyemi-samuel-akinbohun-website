@@ -7,11 +7,11 @@
       "IoT Security Engineer",
       "Cloud Security Engineer (entry level)"
     ],
-    "evidence": "Built and attacked a five-system smart-home testbed; tested broker access control, replay and flooding behaviour. Cloud skills are developing through AZ-104 preparation.",
+    "evidence": "MSc Cybersecurity and Digital Forensics with Distinction; ISC2 Certified in Cybersecurity; current cybersecurity PhD researcher. Cloud skills are developing through AZ-104 preparation.",
     "links": [
       {
-        "label": "Smart-home research",
-        "href": "/projects/smart-home-security-research"
+        "label": "About",
+        "href": "/about"
       },
       {
         "label": "Azure Cloud Lab",
@@ -26,15 +26,15 @@
       "Applied Cryptography Engineer",
       "Research Engineer"
     ],
-    "evidence": "PhD research on optimising Paillier partial homomorphic encryption; five manuscripts submitted or under review; taught homomorphic encryption at master's level.",
+    "evidence": "Current cybersecurity PhD researcher; taught homomorphic encryption at master's level; policy briefs on post-quantum cryptography.",
     "links": [
       {
-        "label": "Publications",
-        "href": "/publications"
+        "label": "Policy briefs",
+        "href": "/policy"
       },
       {
-        "label": "Research",
-        "href": "/research"
+        "label": "Teaching",
+        "href": "/academic-activities/masters-homomorphic-encryption-teaching"
       }
     ]
   },
@@ -47,15 +47,15 @@
       "Research Fellow",
       "Early-career research fellowships"
     ],
-    "evidence": "PhD research on optimising Paillier partial homomorphic encryption with five manuscripts in peer review; homomorphic encryption taught to master's students; Graduate Teaching Assistant; reviewer for Scientific Reports (Springer Nature) and IET Blockchain; SPRITE+-supported place at the Strathclyde Cybercrime Summer School.",
+    "evidence": "Current cybersecurity PhD researcher; homomorphic encryption taught to master's students; Graduate Teaching Assistant; LTHE 1 certified; reviewer for Scientific Reports (Springer Nature) and IET Blockchain; SPRITE+-supported place at the Strathclyde Cybercrime Summer School.",
     "links": [
-      {
-        "label": "Publications",
-        "href": "/publications"
-      },
       {
         "label": "Academic activities",
         "href": "/academic-activities"
+      },
+      {
+        "label": "About",
+        "href": "/about"
       }
     ]
   },
@@ -68,7 +68,7 @@
       "Junior Incident Response Analyst",
       "Security Analyst"
     ],
-    "evidence": "MSc coursework with FTK Imager, Autopsy and EnCase; PhD network investigations with Wireshark, tcpdump, broker logs and Python correlation scripts.",
+    "evidence": "MSc coursework with FTK Imager, Autopsy and EnCase, with findings documented in reports.",
     "links": [
       {
         "label": "Digital forensics",
@@ -86,7 +86,7 @@
       "Machine Learning Analyst",
       "Junior Applied Machine Learning Engineer"
     ],
-    "evidence": "MSc dissertation comparing eight classifiers for phishing URL detection; Python experiment pipelines and message-level datasets in the PhD; Huawei HCIA Big Data.",
+    "evidence": "MSc dissertation comparing eight classifiers for phishing URL detection; Huawei HCIA Big Data.",
     "links": [
       {
         "label": "Phishing URL detection",
@@ -102,7 +102,7 @@
       "Research Software Engineer",
       "Technology Graduate Programme"
     ],
-    "evidence": "Python research tooling and audit scripts; ZeroSeal, Citizen and Omela built with Next.js and deployed on Vercel.",
+    "evidence": "Python for data and machine learning work; ZeroSeal, Citizen and Omela built with Next.js and deployed on Vercel.",
     "links": [
       {
         "label": "ZeroSeal",
@@ -127,11 +127,11 @@
       "Information Security Policy Analyst",
       "Governance, Risk and Compliance Analyst"
     ],
-    "evidence": "Threat analysis and risk assessment manuscript linking risk models to experimental evidence; ISC2 CC; experience explaining technical risk to students and non-specialists.",
+    "evidence": "Policy briefs on post-quantum cryptography, financial regulation and smart-device law; ISC2 CC; experience explaining technical risk to students and non-specialists.",
     "links": [
       {
-        "label": "Risk assessment manuscript",
-        "href": "/publications/mqtt-threat-analysis-risk-assessment"
+        "label": "Policy briefs",
+        "href": "/policy"
       }
     ]
   }

@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
   title: "Projects",
-  description: "Case studies across smart-home security research, applied cryptography, machine learning, digital forensics and independent software.",
+  description: "Case studies across machine learning, digital forensics and independent software.",
   path: "/projects",
 });
 

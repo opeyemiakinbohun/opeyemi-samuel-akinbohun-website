@@ -5,15 +5,12 @@ import { Capabilities } from "@/components/Capabilities";
 import { CvButton } from "@/components/CvButton";
 import { GlanceBar } from "@/components/GlanceBar";
 import { Logo } from "@/components/Logo";
-import { PublicationList } from "@/components/PublicationList";
 import { ProjectCard, ResultList, StackTags } from "@/components/ProjectCard";
 import { QuickAnswers } from "@/components/QuickAnswers";
 import { Stamp } from "@/components/Stamp";
-import { TestbedSimulation } from "@/components/TestbedSimulation";
 import { WhyHireMe } from "@/components/WhyHireMe";
 import highlights from "../../content/data/highlights.json";
-import { DEMO_KEY, addCiphertexts, decrypt, encrypt } from "@/lib/paillier";
-import { getActivities, getAnswers, getArticles, getProjects, getPublications, getRoles, tagLabel } from "@/lib/content";
+import { getActivities, getAnswers, getArticles, getPolicyBriefs, getProjects, getRoles, tagLabel } from "@/lib/content";
 
 /** Square arrow button used on cards. Points right, never up. */
 function ArrowBox() {
@@ -24,26 +21,13 @@ function ArrowBox() {
   );
 }
 
-/** A small worked Paillier example, computed at build time with the insecure demo key. */
-function encryptedExample() {
-  const rows = [
-    { s: "s01", type: "temp", m: 21 },
-    { s: "s04", type: "light", m: 34 },
-    { s: "s09", type: "power", m: 18 },
-  ];
-  const cs = rows.map((r) => encrypt(DEMO_KEY, BigInt(r.m)));
-  const C = addCiphertexts(DEMO_KEY, cs);
-  return { rows: rows.map((r, i) => ({ ...r, c: "0x" + cs[i].toString(16) })), C: "0x" + C.toString(16), D: decrypt(DEMO_KEY, C).toString() };
-}
-
 export default function Home() {
   const projects = getProjects();
   const byslug = (s: string) => projects.find((p) => p.meta.slug === s);
-    const pubs = getPublications().map((p) => p.meta);
+  const briefs = getPolicyBriefs();
   const activities = getActivities();
   const articles = getArticles();
   const roles = getRoles();
-  const ex = encryptedExample();
 
   return (
     <div className="r-home">
@@ -79,12 +63,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <div className="wrap">
-          <div className="r-stage">
-            <TestbedSimulation autoplay compact />
-          </div>
-        </div>
       </section>
 
       {/* Trust grid */}
@@ -104,11 +82,11 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-            <Link href="/publications" className="r-feature">
+            <Link href="/policy" className="r-feature">
               <ArrowBox />
-              <span className="r-feature-top">PhD research</span>
-              <span className="r-feature-num">{pubs.length}</span>
-              <span className="r-feature-cap">manuscripts in peer review at Elsevier, IEEE and ACM venues</span>
+              <span className="r-feature-top">Policy writing</span>
+              <span className="r-feature-num">{briefs.length}</span>
+              <span className="r-feature-cap">policy briefs on post-quantum cryptography, financial regulation and smart-device law</span>
             </Link>
           </div>
         </div>
@@ -124,31 +102,26 @@ export default function Home() {
           </h2>
           <div className="r-btns">
             <Link className="r-btn r-btn-lime" href="/projects">See my projects</Link>
-            <Link className="r-btn r-btn-soft" href="/research">How my research works</Link>
+            <Link className="r-btn r-btn-soft" href="/policy">Read my policy briefs</Link>
           </div>
 
           <div className="r-cards-2">
-            <Link href="/projects/smart-home-security-research" className="r-card">
+            <Link href="/projects/digital-forensics" className="r-card">
               <div className="r-card-head">
-                <h3>Encrypted smart-home data <span className="r-dim">tested in controlled security experiments</span></h3>
+                <h3>Digital forensics <span className="r-dim">evidence handled step by step in MSc practicals</span></h3>
                 <ArrowBox />
               </div>
               <div className="r-ui">
-                <div className="r-ui-bar"><i /><i /><i /><span>Encrypted aggregation, worked example</span></div>
-                <table className="r-ui-table">
-                  <thead><tr><th>Sensor</th><th>Reading</th><th>Ciphertext</th></tr></thead>
-                  <tbody>
-                    {ex.rows.map((r) => (
-                      <tr key={r.s}><td>{r.s} <span className="r-dim">{r.type}</span></td><td>{r.m}</td><td className="r-mono">{r.c}</td></tr>
-                    ))}
-                    <tr className="r-ui-sum"><td>Product of ciphertexts</td><td /><td className="r-mono">{ex.C}</td></tr>
-                    <tr className="r-ui-ok"><td>Decrypted sum</td><td>{ex.D}</td><td className="r-mono">matches 21 + 34 + 18</td></tr>
-                  </tbody>
-                </table>
-                <p className="r-ui-note">Computed with an insecure 20-bit demo key. My experiments use 2048 and 3072-bit keys.</p>
+                <div className="r-ui-bar"><i /><i /><i /><span>MSc forensic practicals</span></div>
+                <ul className="r-ui-list">
+                  {highlights.forensicsTools.map((c, i) => (
+                    <li key={c}><span className="r-mono r-dim">{String(i + 1).padStart(2, "0")}</span>{c}<span className="r-pill">used</span></li>
+                  ))}
+                </ul>
+                <p className="r-ui-note">Academic coursework exercises, not professional investigations.</p>
               </div>
-              <StackTags tools={byslug("smart-home-security-research")?.meta.tools ?? []} max={7} />
-              <ResultList results={byslug("smart-home-security-research")?.meta.results ?? []} max={4} />
+              <StackTags tools={byslug("digital-forensics")?.meta.tools ?? []} max={6} />
+              <ResultList results={byslug("digital-forensics")?.meta.results ?? []} max={4} />
               <span className="read-more">Read more</span>
             </Link>
 
@@ -173,7 +146,7 @@ export default function Home() {
           </div>
 
           <div className="pc-grid" style={{ marginTop: 24 }}>
-            {["digital-forensics", "zeroseal", "citizen", "omela"].map((sl) => {
+            {["zeroseal", "citizen", "omela"].map((sl) => {
               const p = byslug(sl);
               return p ? <ProjectCard key={sl} meta={p.meta} maxTools={6} /> : null;
             })}
@@ -192,19 +165,6 @@ export default function Home() {
 
       <WhyHireMe />
 
-      {/* Publications: left heading, right list */}
-      <section className="r-section" id="publications" aria-labelledby="pubs-title">
-        <div className="wrap r-split">
-          <div className="r-split-left">
-            <h2 id="pubs-title" className="r-h2">Research in peer review. <span className="r-dim">Five manuscripts across Elsevier, IEEE and ACM venues.</span></h2>
-            <Link className="r-textlink" href="/publications">All publications</Link>
-          </div>
-          <div className="r-split-right">
-            <PublicationList items={pubs.map(({ slug, title, venue, publisher, publisherLogo, type, status, statusLabel }) => ({ slug, title, venue, publisher, publisherLogo, type, status, statusLabel }))} filterable={false} />
-          </div>
-        </div>
-      </section>
-
       {/* Career Journey */}
       <section className="r-section" aria-labelledby="career-title">
         <div className="wrap">
@@ -217,7 +177,7 @@ export default function Home() {
       {articles.length > 0 && (
         <section className="r-section" id="writing" aria-labelledby="writing-title">
           <div className="wrap">
-            <h2 id="writing-title" className="r-h2">Read my technical writing. <span className="r-dim">Cryptography, post-quantum and MQTT security.</span></h2>
+            <h2 id="writing-title" className="r-h2">Read my technical writing. <span className="r-dim">Cryptography, post-quantum and policy.</span></h2>
             <Link className="r-textlink" href="/insights">All articles</Link>
             <div className="r-cards-2" style={{ marginTop: 28 }}>
               {articles.slice(0, 4).map((a) => (

@@ -27,7 +27,7 @@ export default function ActivitiesPage() {
     <>
       <PageHead
         crumbs={[{ label: "Academic activities" }]}
-        eyebrow="Research"
+        eyebrow="Academic"
         title="Teaching, review and academic service"
         lede="What I do alongside my PhD. Attendance, teaching and reviewing are listed as exactly what they were: attending is not presenting, and an accepted review invitation is not a completed review."
       />

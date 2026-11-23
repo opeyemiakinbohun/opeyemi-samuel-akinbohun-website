@@ -68,25 +68,6 @@
       ]
     },
     {
-      "name": "Research",
-      "items": [
-        {
-          "label": "Smart-home testbed and Paillier experiments",
-          "short": "Testbed",
-          "from": "2025-01",
-          "to": "2026-11",
-          "dates": "during my PhD"
-        },
-        {
-          "label": "ACM SAC 2027 and ACM TRUST 2027 manuscripts submitted",
-          "short": "Submissions",
-          "from": "2026-10",
-          "to": "2026-11",
-          "dates": "October to November 2026"
-        }
-      ]
-    },
-    {
       "name": "Service",
       "items": [
         {

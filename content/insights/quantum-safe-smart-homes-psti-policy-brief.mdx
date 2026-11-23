@@ -19,7 +19,7 @@ brief:
     - "Prioritise quantum-resistant firmware-update verification while assessing confidentiality and key-exchange risks for each device."
     - "Fund testbed research on post-quantum costs for constrained hardware, so future rules rest on measured overhead."
 sources: [{"title": "GOV.UK, Regulations: consumer connectable product security (PSTI Act 2022 and 2023 Regulations)", "url": "https://www.gov.uk/guidance/regulations-consumer-connectable-product-security"}, {"title": "NCSC, Timelines for migration to post-quantum cryptography", "url": "https://www.ncsc.gov.uk/guidance/pqc-migration-timelines"}, {"title": "NIST SP 800-208, Recommendation for Stateful Hash-Based Signature Schemes", "url": "https://csrc.nist.gov/pubs/sp/800/208/final"}, {"title": "NIST, Post-Quantum Cryptography Standardization (FIPS 203, 204 and 205)", "url": "https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization"}, {"title": "Regulation (EU) 2024/2847, the Cyber Resilience Act", "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj"}, {"title": "ETSI EN 303 645, Cyber Security for Consumer Internet of Things: Baseline Requirements", "url": null}]
-relatedProjects: ["smart-home-security-research"]
+relatedProjects: []
 visibility: "public"
 verificationStatus: "documented"
 lastVerifiedAt: "2026-11-22"
@@ -62,11 +62,11 @@ This creates a deadline that is easy to miss. For devices that rely exclusively 
 
 Good options already exist. NIST has approved the stateful hash-based signature schemes LMS and XMSS in SP 800-208, which are widely recommended for firmware and software signing, and has standardised the stateless SLH-DSA in FIPS 205. Their security rests on hash functions rather than factoring or discrete logarithms. They are bigger and slower in some respects, which is exactly why the decision belongs in the hardware design stage and not in a rushed update in the 2030s.
 
-## Where my research fits
+## A note on homomorphic encryption
 
-My PhD studies Paillier homomorphic encryption for privacy-preserving smart-home data, evaluated on a virtualised MQTT testbed at 2048-bit and 3072-bit key sizes. Paillier relies on composite residuosity assumptions and is not considered secure against sufficiently capable quantum computers. Lattice-based homomorphic schemes rely on mathematical problems believed to resist quantum attacks, although their computational, memory and communication requirements can present challenges for resource-constrained devices.
+Privacy-preserving techniques face the same transition. Paillier relies on composite residuosity assumptions and is not considered secure against sufficiently capable quantum computers. Lattice-based homomorphic schemes rely on mathematical problems believed to resist quantum attacks, although their computational, memory and communication requirements can present challenges for resource-constrained devices.
 
-My VM-based MQTT testbed demonstrates the latency and throughput costs of Paillier encryption in a smart-home architecture. It does not directly measure energy consumption or performance on physical microcontrollers. Those measurements would be valuable for understanding the costs of cryptographic migration on constrained smart-home devices. Policy informed by practical testing is more likely to produce security requirements that manufacturers can realistically implement.
+Measurements of these costs on physical microcontrollers and battery-powered devices would help show what cryptographic migration really costs for constrained smart-home devices. Policy informed by practical testing is more likely to produce security requirements that manufacturers can realistically implement.
 
 ## Five recommendations
 
@@ -78,7 +78,7 @@ My VM-based MQTT testbed demonstrates the latency and throughput costs of Pailli
 
 **4. Prioritise firmware authenticity according to risk.** For long-lived consumer devices, quantum-resistant firmware-update verification should be a major migration priority because compromised update authentication could allow attackers to install malicious firmware. Key exchange and confidentiality protections also matter, particularly for devices handling sensitive information. Manufacturers should determine the appropriate migration order through device-specific risk assessments.
 
-**5. Fund measurement on constrained hardware.** Post-quantum costs on servers are well studied. Costs on cheap microcontrollers, battery devices and home hubs are less understood. Small public testbeds that include physical devices, extending the kind of virtualised environment I use in my research, could give regulators and manufacturers shared evidence before rules are written.
+**5. Fund measurement on constrained hardware.** Post-quantum costs on servers are well studied. Costs on cheap microcontrollers, battery devices and home hubs are less understood. Small public testbeds with physical devices could give regulators and manufacturers shared evidence before rules are written.
 
 ## What this brief does not claim
 

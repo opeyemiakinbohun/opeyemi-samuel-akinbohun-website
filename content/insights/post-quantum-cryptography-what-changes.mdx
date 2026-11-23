@@ -9,7 +9,7 @@ publishedAt: "2026-11-22"
 updatedAt: null
 ownerApproved: true
 sources: [{"title": "NIST, Post-Quantum Cryptography Standardization (FIPS 203, 204 and 205; FIPS 206 and HQC status)", "url": "https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization"}, {"title": "NCSC, Timelines for migration to post-quantum cryptography", "url": "https://www.ncsc.gov.uk/guidance/pqc-migration-timelines"}, {"title": "NIST, Status Report on the Fourth Round of the NIST Post-Quantum Cryptography Standardization Process (NIST IR 8545)", "url": null}, {"title": "Shor, P. (1994). Algorithms for quantum computation: discrete logarithms and factoring.", "url": null}]
-relatedProjects: ["smart-home-security-research"]
+relatedProjects: []
 visibility: "public"
 verificationStatus: "to-confirm"
 lastVerifiedAt: "2026-11-21"
@@ -51,7 +51,7 @@ The first step is the least glamorous and the most important: knowing where cryp
 
 ## What this means for homomorphic encryption
 
-This is where post-quantum cryptography meets my own research. The Paillier cryptosystem, which I use for privacy-preserving aggregation of smart-home sensor data, is based on the decisional composite residuosity assumption. Its security is tied to the difficulty of factoring its modulus. A quantum computer running Shor's algorithm could factor that modulus and recover the private key.
+This is where post-quantum cryptography meets privacy-preserving computation. The Paillier cryptosystem, often used for privacy-preserving aggregation of sensor data, is based on the decisional composite residuosity assumption. Its security is tied to the difficulty of factoring its modulus. A quantum computer running Shor's algorithm could factor that modulus and recover the private key.
 
 So Paillier is not post-quantum secure. For data that must stay confidential for decades, that matters. For short-lived sensor readings it may be an acceptable trade-off today, but the decision should be made deliberately rather than by default.
 
@@ -72,7 +72,7 @@ For an engineering team, the useful first actions are not exotic:
 
 **Scope.** This is an overview for engineers, not a cryptanalysis. Statements about standards and timelines reflect NIST and NCSC publications as checked in November 2026. Both are updated over time, so check the latest versions before relying on dates.
 
-**Paillier and quantum risk.** Paillier's security reduces to problems that are easy for a large quantum computer running Shor's algorithm. My PhD work uses Paillier because it is efficient for additive aggregation today. Long-term deployments would need a migration path to lattice-based schemes.
+**Paillier and quantum risk.** Paillier's security reduces to problems that are easy for a large quantum computer running Shor's algorithm. Paillier remains attractive because it is efficient for additive aggregation today. Long-term deployments would need a migration path to lattice-based schemes.
 
 **What "believed" means.** Lattice-based schemes have no known efficient quantum attack, but post-quantum security is an assumption based on current knowledge, not a proof. That is one reason NIST standardised a hash-based signature (SLH-DSA) and a code-based KEM (HQC) alongside the lattice schemes.
 

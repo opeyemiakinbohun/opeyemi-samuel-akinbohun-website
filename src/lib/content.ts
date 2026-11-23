@@ -9,12 +9,10 @@ import {
   articleSchema,
   careerSchema,
   credentialsSchema,
-  datasetsSchema,
   educationSchema,
   experienceSchema,
   labSchema,
   projectSchema,
-  publicationSchema,
   rolesSchema,
   skillsSchema,
   timelineSchema,
@@ -62,8 +60,6 @@ function readJson<S extends z.ZodType>(file: string, schema: S): z.infer<S> {
 
 const byOrder = <T extends { meta: { order: number } }>(a: T, b: T) => a.meta.order - b.meta.order;
 
-export const getPublications = () => readCollection("publications", publicationSchema).sort(byOrder);
-export const getPublication = (slug: string) => getPublications().find((p) => p.meta.slug === slug);
 
 export const getProjects = () => readCollection("projects", projectSchema).sort(byOrder);
 export const getProject = (slug: string) => getProjects().find((p) => p.meta.slug === slug);
@@ -129,7 +125,6 @@ export const getCredentials = () => readJson("credentials.json", credentialsSche
 export const getSkills = () => readJson("skills.json", skillsSchema);
 export const getAnswers = () => readJson("quick-answers.json", answersSchema);
 export const getTimeline = () => readJson("timeline.json", timelineSchema);
-export const getDatasets = () => readJson("datasets.json", datasetsSchema);
 
 export const categories = [
   { slug: "cryptography", label: "Cryptography", description: "Homomorphic encryption, public-key schemes and privacy-enhancing technologies." },
